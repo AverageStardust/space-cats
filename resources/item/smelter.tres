@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://bfwsoc5hwqgul"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_sx3tl"]
+
+[resource]
+script = ExtResource("1_sx3tl")
+name = "Smelter"
+description = "Refines metal"
+texture_offset = Vector2i(4, 4)
+stack_size = 99
+tags = Array[int]([])
+entity = "smelter"
+meal_value = 0
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

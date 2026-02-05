@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=4 format=3 uid="uid://dbd6sgkyim5hd"]
+
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="1_m65pl"]
+[ext_resource type="Script" path="res://resources/entityScene/dockOptions.gd" id="1_nbuwv"]
+
+[sub_resource type="Resource" id="Resource_fvkm8"]
+script = ExtResource("1_nbuwv")
+spawn_index = 2
+
+[resource]
+script = ExtResource("1_m65pl")
+texture_offset = Vector2i(0, 6)
+has_sprite = true
+scene_id = "dock"
+scene_options = SubResource("Resource_fvkm8")
+water_platform = true
+height_offset = -30
+item = ""

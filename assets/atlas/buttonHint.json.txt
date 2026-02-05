@@ -1,0 +1,218 @@
+{
+	"keyboard Q": [
+		17,
+		2
+	],
+	"keyboard W": [
+		18,
+		2
+	],
+	"keyboard E": [
+		19,
+		2
+	],
+	"keyboard R": [
+		20,
+		2
+	],
+	"keyboard T": [
+		21,
+		2
+	],
+	"keyboard Y": [
+		22,
+		2
+	],
+	"keyboard U": [
+		23,
+		2
+	],
+	"keyboard I": [
+		24,
+		2
+	],
+	"keyboard O": [
+		25,
+		2
+	],
+	"keyboard P": [
+		26,
+		2
+	],
+	"keyboard A": [
+		18,
+		3
+	],
+	"keyboard S": [
+		19,
+		3
+	],
+	"keyboard D": [
+		20,
+		3
+	],
+	"keyboard F": [
+		21,
+		3
+	],
+	"keyboard G": [
+		22,
+		3
+	],
+	"keyboard H": [
+		23,
+		3
+	],
+	"keyboard J": [
+		24,
+		3
+	],
+	"keyboard K": [
+		25,
+		3
+	],
+	"keyboard L": [
+		26,
+		3
+	],
+	"keyboard Z": [
+		19,
+		4
+	],
+	"keyboard X": [
+		20,
+		4
+	],
+	"keyboard C": [
+		21,
+		4
+	],
+	"keyboard V": [
+		22,
+		4
+	],
+	"keyboard B": [
+		23,
+		4
+	],
+	"keyboard N": [
+		24,
+		4
+	],
+	"keyboard M": [
+		25,
+		4
+	],
+	"nintendo 0": [
+		14,
+		0
+	],
+	"nintendo 1": [
+		13,
+		0
+	],
+	"nintendo 2": [
+		16,
+		0
+	],
+	"nintendo 3": [
+		15,
+		0
+	],
+	"nintendo 11": [
+		1,
+		1
+	],
+	"nintendo 12": [
+		3,
+		1
+	],
+	"nintendo 13": [
+		4,
+		1
+	],
+	"nintendo 14": [
+		2,
+		1
+	],
+	"xbox 0": [
+		13,
+		0
+	],
+	"xbox 1": [
+		14,
+		0
+	],
+	"xbox 2": [
+		15,
+		0
+	],
+	"xbox 3": [
+		16,
+		0
+	],
+	"xbox 11": [
+		1,
+		1
+	],
+	"xbox 12": [
+		3,
+		1
+	],
+	"xbox 13": [
+		4,
+		1
+	],
+	"xbox 14": [
+		2,
+		1
+	],
+	"playstation 0": [
+		23,
+		16
+	],
+	"playstation 1": [
+		19,
+		16
+	],
+	"playstation 2": [
+		10,
+		16
+	],
+	"playstation 3": [
+		11,
+		16
+	],
+	"playstation 11": [
+		1,
+		7
+	],
+	"playstation 12": [
+		3,
+		7
+	],
+	"playstation 13": [
+		4,
+		7
+	],
+	"playstation 14": [
+		2,
+		7
+	],
+	"axis -1": [
+		9,
+		6
+	],
+	"axis +1": [
+		11,
+		6
+	],
+	"axis -0": [
+		12,
+		6
+	],
+	"axis +0": [
+		10,
+		6
+	]
+}

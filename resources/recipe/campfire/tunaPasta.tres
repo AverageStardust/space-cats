@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://bfhyn3xc4vqyy"]
+
+[ext_resource type="Script" path="res://source/crafting/recipe.gd" id="1_yeg6i"]
+
+[resource]
+script = ExtResource("1_yeg6i")
+item_ids = Array[String](["tuna", "tomato", "barley"])
+item_tags = Array[int]([])
+result_id = "tunaPasta"

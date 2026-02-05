@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnw4vkp5dwigx"]
+
+[ext_resource type="PackedScene" uid="uid://bc4rtderuq6fa" path="res://source/utility/buttonHint.tscn" id="1_obivx"]
+[ext_resource type="Script" path="res://source/utility/movementTutorial.gd" id="1_ugkve"]
+
+[node name="MovementTutorial" type="Node2D"]
+script = ExtResource("1_ugkve")
+
+[node name="LeftHint" parent="." instance=ExtResource("1_obivx")]
+position = Vector2(-10, 0)
+action = &"move_left"
+
+[node name="RightHint" parent="." instance=ExtResource("1_obivx")]
+position = Vector2(10, 0)
+action = &"move_right"

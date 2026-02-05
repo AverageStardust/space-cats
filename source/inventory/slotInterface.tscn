@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtuxkituac1uu"]
+
+[ext_resource type="Script" path="res://source/inventory/slotInterface.gd" id="1_j21u6"]
+[ext_resource type="Texture2D" uid="uid://c712oa7s4l0n6" path="res://assets/ui/slot.png" id="2_btnud"]
+[ext_resource type="PackedScene" uid="uid://bvdilfa2dlfao" path="res://source/utility/itemDisplay.tscn" id="3_h10bb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wx3ka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quxt4"]
+atlas = ExtResource("2_btnud")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Slot" type="PanelContainer"]
+offset_right = 28.0
+offset_bottom = 28.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wx3ka")
+script = ExtResource("1_j21u6")
+
+[node name="SlotTexture" type="TextureRect" parent="."]
+layout_mode = 2
+tooltip_text = "TOOLTIP"
+texture = SubResource("AtlasTexture_quxt4")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="ItemDisplay" parent="CenterContainer" instance=ExtResource("3_h10bb")]
+layout_mode = 2

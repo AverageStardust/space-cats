@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://cu3rftpjlyl10"]
+
+[ext_resource type="Script" path="res://source/fishing/fish.gd" id="1_xgwyw"]
+
+[resource]
+script = ExtResource("1_xgwyw")
+speed = 65.0
+pattern = 0
+size = 18.0
+item_id = "bream"
+spawn_threshold = 3

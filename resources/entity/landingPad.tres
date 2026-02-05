@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=2 format=3 uid="uid://c8rukotkd325g"]
+
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="1_i1uy3"]
+
+[resource]
+script = ExtResource("1_i1uy3")
+texture_offset = Vector2i(0, 0)
+has_sprite = false
+scene_id = "landingPad"
+water_platform = false
+height_offset = -6
+item = ""

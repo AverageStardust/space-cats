@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b45jqgmu7wtpq"]
+
+[ext_resource type="PackedScene" uid="uid://bdt67p8t3bu1o" path="res://source/background/background.tscn" id="1_fcbv3"]
+[ext_resource type="Script" path="res://source/ui/sceneBackground.gd" id="1_nwohy"]
+
+[node name="BackgroundScene" type="Node2D"]
+script = ExtResource("1_nwohy")
+
+[node name="Background" parent="." instance=ExtResource("1_fcbv3")]
+position = Vector2(320, 180)

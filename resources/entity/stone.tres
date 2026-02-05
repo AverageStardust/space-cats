@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=6 format=3 uid="uid://dumwb0rd36fkq"]
+
+[ext_resource type="Script" path="res://resources/entityScene/collectableOptions.gd" id="1_akef1"]
+[ext_resource type="Script" path="res://resources/entityScene/collectableState.gd" id="1_mvxr6"]
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="1_ol53g"]
+
+[sub_resource type="Resource" id="Resource_owcv3"]
+script = ExtResource("1_mvxr6")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_nmd7m"]
+script = ExtResource("1_akef1")
+texture_offset = Vector2i(0, 2)
+broken_texture_offset = Vector2i(0, 3)
+sound = 0
+break_time = 2.5
+break_stength = 1
+tool_type = 1
+custom_interaction = "stone"
+drops = Array[String](["stone"])
+regrow_time = 90.0
+fertilizable = false
+
+[resource]
+script = ExtResource("1_ol53g")
+texture_offset = Vector2i(0, 0)
+has_sprite = true
+scene_id = "collectable"
+scene_options = SubResource("Resource_nmd7m")
+inital_state = SubResource("Resource_owcv3")
+water_platform = false
+height_offset = -6
+item = ""

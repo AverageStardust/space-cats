@@ -1,0 +1,1824 @@
+[gd_resource type="Resource" script_class="SaveGame" load_steps=243 format=3]
+
+[ext_resource type="Script" path="res://source/celestial/celestial.gd" id="1_apf2x"]
+[ext_resource type="Script" path="res://resources/entityScene/collectableState.gd" id="2_xms0s"]
+[ext_resource type="Script" path="res://source/tile/tile.gd" id="3_bgc6w"]
+[ext_resource type="Script" path="res://source/actor/actor.gd" id="4_dq0eb"]
+[ext_resource type="Script" path="res://source/actor/player.gd" id="5_u1fhy"]
+[ext_resource type="Script" path="res://source/inventory/inventoryVolume.gd" id="6_xl4j8"]
+[ext_resource type="Script" path="res://source/inventory/inventorySlot.gd" id="7_wb0oj"]
+[ext_resource type="Script" path="res://source/global/saveGame.gd" id="8_c42ek"]
+[ext_resource type="Script" path="res://source/actor/vehicle.gd" id="9_uf7y6"]
+
+[sub_resource type="Gradient" id="Gradient_xwvnj"]
+offsets = PackedFloat32Array(0.05, 0.15, 0.25, 0.45, 0.75, 0.95)
+colors = PackedColorArray(0.403922, 0.301961, 0.333333, 1, 0.541176, 0.419608, 0.403922, 1, 0.631373, 0.360784, 0.317647, 1, 0.631373, 0.360784, 0.317647, 1, 0.517647, 0.262745, 0.286275, 1, 0.380392, 0.184314, 0.247059, 1)
+
+[sub_resource type="Gradient" id="Gradient_hfhjj"]
+offsets = PackedFloat32Array(0.0471698, 0.146226, 0.25, 0.34434, 0.54717)
+colors = PackedColorArray(0.447059, 0.352941, 0.423529, 1, 0.309804, 0.262745, 0.341176, 1, 0.756863, 0.709804, 0.741176, 1, 0.678431, 0.615686, 0.658824, 1, 0.6, 0.52549, 0.576471, 1)
+
+[sub_resource type="Resource" id="Resource_17nf7"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_cwixp"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_17nf7")
+
+[sub_resource type="Resource" id="Resource_vlb06"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_fdy2w"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_clyii"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_73125"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_clyii")
+
+[sub_resource type="Resource" id="Resource_n6a3k"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_pd15c"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterRight"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ey5pk"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/crater"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ytt57"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterLeft"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_473ps"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_rtety"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_0myqf"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterRight"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_x14t4"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterLeft"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_35ler"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_iv14v"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_cssmr"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_o5v0u"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_cssmr")
+
+[sub_resource type="Resource" id="Resource_0mf7k"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_4a7yv"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_jdo6o"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_sn56j"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_b3hqi"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "campfire"
+
+[sub_resource type="Resource" id="Resource_5w71l"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_yp1bg"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterRight"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_mjt8k"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/crater"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_gi7bl"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterLeft"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_hyy06"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_nguqo"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_jap6y"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_nguqo")
+
+[sub_resource type="Resource" id="Resource_t20fk"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterRight"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_5fipu"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterLeft"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_5vwbs"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_kvlae"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "copperOre"
+entity_state = SubResource("Resource_5vwbs")
+
+[sub_resource type="Resource" id="Resource_745wy"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_13usa"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_u561k"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_13usa")
+
+[sub_resource type="Resource" id="Resource_530mi"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_krffx"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterRight"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_2y2bu"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/crater"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_i8n4b"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/crater"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_d07v0"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterLeft"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_rcoyl"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_akmua"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_t4lh2"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_akmua")
+
+[sub_resource type="Resource" id="Resource_5w1p3"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterRight"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_b7q6c"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterLeft"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_l5w5r"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_m7coy"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_334f4"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "copperOre"
+entity_state = SubResource("Resource_m7coy")
+
+[sub_resource type="Resource" id="Resource_hfore"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_daf8m"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_hfore")
+
+[sub_resource type="Resource" id="Resource_b8ggc"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_x3c3m"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterRight"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_lu7yc"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/crater"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_6ke4k"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/crater"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_87mqa"]
+script = ExtResource("3_bgc6w")
+curvature = 0.1309
+outer_radius = 244.462
+inner_radius = 212.462
+surface_id = "moon/craterLeft"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_hoy6i"]
+script = ExtResource("1_apf2x")
+density = 1.0
+color_ramp = SubResource("Gradient_hfhjj")
+noise_frequency = 0.011
+noise_type = 2
+tiles = Array[ExtResource("3_bgc6w")]([SubResource("Resource_cwixp"), SubResource("Resource_vlb06"), SubResource("Resource_fdy2w"), SubResource("Resource_73125"), SubResource("Resource_n6a3k"), SubResource("Resource_pd15c"), SubResource("Resource_ey5pk"), SubResource("Resource_ytt57"), SubResource("Resource_473ps"), SubResource("Resource_rtety"), SubResource("Resource_0myqf"), SubResource("Resource_x14t4"), SubResource("Resource_35ler"), SubResource("Resource_iv14v"), SubResource("Resource_o5v0u"), SubResource("Resource_0mf7k"), SubResource("Resource_4a7yv"), SubResource("Resource_jdo6o"), SubResource("Resource_sn56j"), SubResource("Resource_b3hqi"), SubResource("Resource_5w71l"), SubResource("Resource_yp1bg"), SubResource("Resource_mjt8k"), SubResource("Resource_gi7bl"), SubResource("Resource_hyy06"), SubResource("Resource_jap6y"), SubResource("Resource_t20fk"), SubResource("Resource_5fipu"), SubResource("Resource_kvlae"), SubResource("Resource_745wy"), SubResource("Resource_u561k"), SubResource("Resource_530mi"), SubResource("Resource_krffx"), SubResource("Resource_2y2bu"), SubResource("Resource_i8n4b"), SubResource("Resource_d07v0"), SubResource("Resource_rcoyl"), SubResource("Resource_t4lh2"), SubResource("Resource_5w1p3"), SubResource("Resource_b7q6c"), SubResource("Resource_l5w5r"), SubResource("Resource_334f4"), SubResource("Resource_daf8m"), SubResource("Resource_b8ggc"), SubResource("Resource_x3c3m"), SubResource("Resource_lu7yc"), SubResource("Resource_6ke4k"), SubResource("Resource_87mqa")])
+orbital_velocity = 20.0
+orbital_radius = 1800.0
+orbital_phase = 0.0
+orbital_time = 0.0
+satellites = {}
+
+[sub_resource type="Resource" id="Resource_u552g"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_cwwax"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_p8fvr"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_4iiyb"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ii7wc"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_lkvn0"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_o6le1"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_tu0uj"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "bush"
+entity_state = SubResource("Resource_o6le1")
+
+[sub_resource type="Resource" id="Resource_3583w"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_mxq1b"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "workstation"
+
+[sub_resource type="Resource" id="Resource_1safb"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "radio"
+
+[sub_resource type="Resource" id="Resource_jlfur"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_xgm8q"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_saktp"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "bush"
+entity_state = SubResource("Resource_xgm8q")
+
+[sub_resource type="Resource" id="Resource_m03wn"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ghlwv"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_akfan"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "landingPad"
+
+[sub_resource type="Resource" id="Resource_xk5uq"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_fu6t0"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_jv714"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_8i1k5"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_jv714")
+
+[sub_resource type="Resource" id="Resource_q4lsq"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_skh8j"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_mpwip"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "cabage"
+entity_state = SubResource("Resource_skh8j")
+
+[sub_resource type="Resource" id="Resource_lk8v0"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_txv4c"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "cabage"
+entity_state = SubResource("Resource_lk8v0")
+
+[sub_resource type="Resource" id="Resource_8ckcc"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_1qpeu"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_m4apb"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "herb"
+entity_state = SubResource("Resource_1qpeu")
+
+[sub_resource type="Resource" id="Resource_8273y"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_px2dv"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "barley"
+entity_state = SubResource("Resource_8273y")
+
+[sub_resource type="Resource" id="Resource_lx0mk"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_eb64x"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_8gefq"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "herb"
+entity_state = SubResource("Resource_eb64x")
+
+[sub_resource type="Resource" id="Resource_4ae4p"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_w4mr6"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_n51ri"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "barley"
+entity_state = SubResource("Resource_w4mr6")
+
+[sub_resource type="Resource" id="Resource_4vk5p"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ocgo0"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_cf8wy"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_ocgo0")
+
+[sub_resource type="Resource" id="Resource_yjyvl"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_a1unc"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_yjyvl")
+
+[sub_resource type="Resource" id="Resource_yc7he"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_tyeo6"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_syr06"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "bush"
+entity_state = SubResource("Resource_tyeo6")
+
+[sub_resource type="Resource" id="Resource_p7dwe"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_yr3xc"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_t76jc"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "barley"
+entity_state = SubResource("Resource_yr3xc")
+
+[sub_resource type="Resource" id="Resource_ad61p"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_rj38y"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_g756a"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "onion"
+entity_state = SubResource("Resource_rj38y")
+
+[sub_resource type="Resource" id="Resource_t1t4f"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_hxwpm"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_87obx"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/waterRight"
+entity_id = "dockRight"
+
+[sub_resource type="Resource" id="Resource_corth"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_jgenf"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_odwnf"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_6hsaj"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_nplyv"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_skdk8"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_fyq5l"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_1en8y"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_4c6wx"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_1gt7u"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_piwa6"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_6mwg7"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/waterLeft"
+entity_id = "dockLeft"
+
+[sub_resource type="Resource" id="Resource_437y6"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_cpbxp"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_ege02"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "tomato"
+entity_state = SubResource("Resource_cpbxp")
+
+[sub_resource type="Resource" id="Resource_1id3p"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_3ohng"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "tomato"
+entity_state = SubResource("Resource_1id3p")
+
+[sub_resource type="Resource" id="Resource_0oj8h"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_cm3y4"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_7a8j1"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "tomato"
+entity_state = SubResource("Resource_cm3y4")
+
+[sub_resource type="Resource" id="Resource_5r8j0"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_mgejn"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_ke8h0"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "copperOre"
+entity_state = SubResource("Resource_mgejn")
+
+[sub_resource type="Resource" id="Resource_3o3st"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_4ju5i"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "copperOre"
+entity_state = SubResource("Resource_3o3st")
+
+[sub_resource type="Resource" id="Resource_xuotu"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_boo73"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_smc8b"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "flint"
+entity_state = SubResource("Resource_boo73")
+
+[sub_resource type="Resource" id="Resource_1vx5r"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_cdfr6"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_8txy2"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "flint"
+entity_state = SubResource("Resource_cdfr6")
+
+[sub_resource type="Resource" id="Resource_lcofw"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_d7xts"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "onion"
+entity_state = SubResource("Resource_lcofw")
+
+[sub_resource type="Resource" id="Resource_5e5kg"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_hm8xo"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_mvkdh"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "herb"
+entity_state = SubResource("Resource_hm8xo")
+
+[sub_resource type="Resource" id="Resource_r4cgr"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_2apwy"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "barley"
+entity_state = SubResource("Resource_r4cgr")
+
+[sub_resource type="Resource" id="Resource_qcq25"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_150u4"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "barley"
+entity_state = SubResource("Resource_qcq25")
+
+[sub_resource type="Resource" id="Resource_fgyhr"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_darf2"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "bush"
+entity_state = SubResource("Resource_fgyhr")
+
+[sub_resource type="Resource" id="Resource_b4hcb"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ig2sc"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_dwcjl"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "ironOre"
+entity_state = SubResource("Resource_ig2sc")
+
+[sub_resource type="Resource" id="Resource_wtmww"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/waterRight"
+entity_id = "dockRight"
+
+[sub_resource type="Resource" id="Resource_mbrca"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_sjfyx"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_s3oty"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/waterLeft"
+entity_id = "dockLeft"
+
+[sub_resource type="Resource" id="Resource_7s3tb"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_u1ne6"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_yo3xl"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "ironOre"
+entity_state = SubResource("Resource_u1ne6")
+
+[sub_resource type="Resource" id="Resource_j0axs"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_1lfpp"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_gatke"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "ironOre"
+entity_state = SubResource("Resource_1lfpp")
+
+[sub_resource type="Resource" id="Resource_2c65l"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_46ifq"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "ironOre"
+entity_state = SubResource("Resource_2c65l")
+
+[sub_resource type="Resource" id="Resource_nmoxc"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_vsswt"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_xbytw"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "strawberry"
+entity_state = SubResource("Resource_vsswt")
+
+[sub_resource type="Resource" id="Resource_g2fav"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_hyfar"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "strawberry"
+entity_state = SubResource("Resource_g2fav")
+
+[sub_resource type="Resource" id="Resource_37tt4"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_cr70u"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_kh66a"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "pansy"
+entity_state = SubResource("Resource_cr70u")
+
+[sub_resource type="Resource" id="Resource_qkpjl"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ddl04"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_s10vp"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "pansy"
+entity_state = SubResource("Resource_ddl04")
+
+[sub_resource type="Resource" id="Resource_6fw3b"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/waterRight"
+entity_id = "dockRight"
+
+[sub_resource type="Resource" id="Resource_7m12r"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ab2bt"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ahs1x"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_7mbbx"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/water"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_0ffxm"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/waterLeft"
+entity_id = "dockLeft"
+
+[sub_resource type="Resource" id="Resource_ykktv"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_abc34"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "pansy"
+entity_state = SubResource("Resource_ykktv")
+
+[sub_resource type="Resource" id="Resource_twsh7"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_3r21a"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_twsh7")
+
+[sub_resource type="Resource" id="Resource_1ksih"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_nsljb"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_r7pi2"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "stone"
+entity_state = SubResource("Resource_nsljb")
+
+[sub_resource type="Resource" id="Resource_j37d8"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_0udcr"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ecbcg"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_lkjk5"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "blueberry"
+entity_state = SubResource("Resource_ecbcg")
+
+[sub_resource type="Resource" id="Resource_voby4"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_7w443"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_tx6rs"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "blueberry"
+entity_state = SubResource("Resource_7w443")
+
+[sub_resource type="Resource" id="Resource_ldjj3"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_ltq2l"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "blueberry"
+entity_state = SubResource("Resource_ldjj3")
+
+[sub_resource type="Resource" id="Resource_lvnq8"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_oxkkj"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_8t4ij"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "cabage"
+entity_state = SubResource("Resource_oxkkj")
+
+[sub_resource type="Resource" id="Resource_403r4"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_6qtel"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_dx2oj"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "onion"
+entity_state = SubResource("Resource_6qtel")
+
+[sub_resource type="Resource" id="Resource_he13a"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_2jnru"]
+script = ExtResource("2_xms0s")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_hn461"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = "bush"
+entity_state = SubResource("Resource_2jnru")
+
+[sub_resource type="Resource" id="Resource_1qbc2"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_ag4iy"]
+script = ExtResource("3_bgc6w")
+curvature = 0.0560999
+outer_radius = 570.411
+inner_radius = 538.411
+surface_id = "home/ground"
+entity_id = ""
+
+[sub_resource type="Resource" id="Resource_lyt2i"]
+script = ExtResource("1_apf2x")
+density = 1.0
+color_ramp = SubResource("Gradient_xwvnj")
+noise_frequency = 0.09
+noise_type = 0
+tiles = Array[ExtResource("3_bgc6w")]([SubResource("Resource_u552g"), SubResource("Resource_cwwax"), SubResource("Resource_p8fvr"), SubResource("Resource_4iiyb"), SubResource("Resource_ii7wc"), SubResource("Resource_lkvn0"), SubResource("Resource_tu0uj"), SubResource("Resource_3583w"), SubResource("Resource_mxq1b"), SubResource("Resource_1safb"), SubResource("Resource_jlfur"), SubResource("Resource_saktp"), SubResource("Resource_m03wn"), SubResource("Resource_ghlwv"), SubResource("Resource_akfan"), SubResource("Resource_xk5uq"), SubResource("Resource_fu6t0"), SubResource("Resource_8i1k5"), SubResource("Resource_q4lsq"), SubResource("Resource_mpwip"), SubResource("Resource_txv4c"), SubResource("Resource_8ckcc"), SubResource("Resource_m4apb"), SubResource("Resource_px2dv"), SubResource("Resource_lx0mk"), SubResource("Resource_8gefq"), SubResource("Resource_4ae4p"), SubResource("Resource_n51ri"), SubResource("Resource_4vk5p"), SubResource("Resource_cf8wy"), SubResource("Resource_a1unc"), SubResource("Resource_yc7he"), SubResource("Resource_syr06"), SubResource("Resource_p7dwe"), SubResource("Resource_t76jc"), SubResource("Resource_ad61p"), SubResource("Resource_g756a"), SubResource("Resource_t1t4f"), SubResource("Resource_hxwpm"), SubResource("Resource_87obx"), SubResource("Resource_corth"), SubResource("Resource_jgenf"), SubResource("Resource_odwnf"), SubResource("Resource_6hsaj"), SubResource("Resource_nplyv"), SubResource("Resource_skdk8"), SubResource("Resource_fyq5l"), SubResource("Resource_1en8y"), SubResource("Resource_4c6wx"), SubResource("Resource_1gt7u"), SubResource("Resource_piwa6"), SubResource("Resource_6mwg7"), SubResource("Resource_437y6"), SubResource("Resource_ege02"), SubResource("Resource_3ohng"), SubResource("Resource_0oj8h"), SubResource("Resource_7a8j1"), SubResource("Resource_5r8j0"), SubResource("Resource_ke8h0"), SubResource("Resource_4ju5i"), SubResource("Resource_xuotu"), SubResource("Resource_smc8b"), SubResource("Resource_1vx5r"), SubResource("Resource_8txy2"), SubResource("Resource_d7xts"), SubResource("Resource_5e5kg"), SubResource("Resource_mvkdh"), SubResource("Resource_2apwy"), SubResource("Resource_150u4"), SubResource("Resource_darf2"), SubResource("Resource_b4hcb"), SubResource("Resource_dwcjl"), SubResource("Resource_wtmww"), SubResource("Resource_mbrca"), SubResource("Resource_sjfyx"), SubResource("Resource_s3oty"), SubResource("Resource_7s3tb"), SubResource("Resource_yo3xl"), SubResource("Resource_j0axs"), SubResource("Resource_gatke"), SubResource("Resource_46ifq"), SubResource("Resource_nmoxc"), SubResource("Resource_xbytw"), SubResource("Resource_hyfar"), SubResource("Resource_37tt4"), SubResource("Resource_kh66a"), SubResource("Resource_qkpjl"), SubResource("Resource_s10vp"), SubResource("Resource_6fw3b"), SubResource("Resource_7m12r"), SubResource("Resource_ab2bt"), SubResource("Resource_ahs1x"), SubResource("Resource_7mbbx"), SubResource("Resource_0ffxm"), SubResource("Resource_abc34"), SubResource("Resource_3r21a"), SubResource("Resource_1ksih"), SubResource("Resource_r7pi2"), SubResource("Resource_j37d8"), SubResource("Resource_0udcr"), SubResource("Resource_lkjk5"), SubResource("Resource_voby4"), SubResource("Resource_tx6rs"), SubResource("Resource_ltq2l"), SubResource("Resource_lvnq8"), SubResource("Resource_8t4ij"), SubResource("Resource_403r4"), SubResource("Resource_dx2oj"), SubResource("Resource_he13a"), SubResource("Resource_hn461"), SubResource("Resource_1qbc2"), SubResource("Resource_ag4iy")])
+orbital_velocity = 0.0
+orbital_radius = 0.0
+orbital_phase = 0.0
+orbital_time = 0.0
+satellites = {
+"Moon": SubResource("Resource_hoy6i")
+}
+
+[sub_resource type="Resource" id="Resource_kv51w"]
+script = ExtResource("4_dq0eb")
+position = Vector2(0, -100)
+velocity = Vector2(0, 0)
+rotation = 0
+surface_velocity = 0.0
+angular_velocity = 0.0
+ground_placement = true
+ground_movment = true
+tile_width = 0.25
+surface_offset = -6.0
+max_speed = 2.0
+max_water_speed = 0.0
+walk_strength = 0.1
+stop_strength = 0.2
+alignment_strength = 0.25
+space_movment = false
+acceleration = 0.0
+max_angular_velocity = 0.0
+space_dampening = 0.0
+
+[sub_resource type="Resource" id="Resource_ot8vh"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = true
+
+[sub_resource type="Resource" id="Resource_jtxyi"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_2ktt8"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_2mesp"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_ky5e0"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_0pidl"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_2s4cv"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_2it7y"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_sucmk"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_yogfg"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_g714u"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_tjm50"]
+script = ExtResource("7_wb0oj")
+item_id = ""
+amount = 0
+capacity = 9223372036854775807
+remaining_durability = 0
+focused = false
+
+[sub_resource type="Resource" id="Resource_ry56j"]
+script = ExtResource("6_xl4j8")
+slots = Array[ExtResource("7_wb0oj")]([SubResource("Resource_ot8vh"), SubResource("Resource_jtxyi"), SubResource("Resource_2ktt8"), SubResource("Resource_2mesp"), SubResource("Resource_ky5e0"), SubResource("Resource_0pidl"), SubResource("Resource_2s4cv"), SubResource("Resource_2it7y"), SubResource("Resource_sucmk"), SubResource("Resource_yogfg"), SubResource("Resource_g714u"), SubResource("Resource_tjm50")])
+capacity = 12
+focused_index = 0
+
+[sub_resource type="Resource" id="Resource_yyon6"]
+resource_local_to_scene = true
+script = ExtResource("5_u1fhy")
+actor = SubResource("Resource_kv51w")
+volume = SubResource("Resource_ry56j")
+tutorials_done = {
+"move_left": false,
+"move_right": false
+}
+
+[sub_resource type="Resource" id="Resource_qxky1"]
+script = ExtResource("4_dq0eb")
+position = Vector2(71, -71)
+velocity = Vector2(0, 0)
+rotation = 0.785398
+surface_velocity = 0.0
+angular_velocity = 0.0
+ground_placement = true
+ground_movment = false
+tile_width = 0.25
+surface_offset = -6.0
+max_speed = 0.0
+max_water_speed = 0.0
+walk_strength = 0.0
+stop_strength = 0.0
+alignment_strength = 0.12
+space_movment = true
+acceleration = 0.065
+max_angular_velocity = 0.025
+space_dampening = 0.007
+
+[sub_resource type="Resource" id="Resource_ep4dw"]
+script = ExtResource("9_uf7y6")
+actor = SubResource("Resource_qxky1")
+boarded = false
+max_fuel = 100.0
+current_fuel = 100.0
+repairs = 0
+
+[resource]
+script = ExtResource("8_c42ek")
+home = SubResource("Resource_lyt2i")
+player = SubResource("Resource_yyon6")
+ship = SubResource("Resource_ep4dw")
+items = Array[Resource("res://source/inventory/droppedItem.gd")]([])
+console_previous_lines = Array[String]([])
+interaction_counts = {}
+discoveries = {
+"recipe": {
+"assembly/campfire": 1,
+"assembly/chest": 1,
+"assembly/stonePickaxe": 1,
+"assembly/woodPickaxe": 1,
+"campfire/cannedAnchovy": 1,
+"campfire/fruitJam": 1,
+"campfire/fruitTart": 1,
+"campfire/gardenSalad": 1,
+"campfire/herbBread": 1
+}
+}
+played = false

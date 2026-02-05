@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=2 format=3 uid="uid://e5rdhcsgbis1"]
+
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="3_l07mu"]
+
+[resource]
+script = ExtResource("3_l07mu")
+texture_offset = Vector2i(6, 6)
+has_sprite = true
+scene_id = "radio"
+water_platform = false
+height_offset = -6
+item = "radio"

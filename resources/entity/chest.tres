@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=6 format=3 uid="uid://b6eq7nwhnsfau"]
+
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="1_couhj"]
+[ext_resource type="Script" path="res://resources/entityScene/chestState.gd" id="1_p0jvk"]
+[ext_resource type="Script" path="res://source/inventory/inventoryVolume.gd" id="2_8ikoq"]
+
+[sub_resource type="Resource" id="Resource_hulyx"]
+script = ExtResource("2_8ikoq")
+slots = Array[Resource("res://source/inventory/inventorySlot.gd")]([])
+capacity = 24
+focused_index = -1
+
+[sub_resource type="Resource" id="Resource_h5tnq"]
+script = ExtResource("1_p0jvk")
+volume = SubResource("Resource_hulyx")
+
+[resource]
+script = ExtResource("1_couhj")
+texture_offset = Vector2i(0, 0)
+has_sprite = true
+scene_id = "chest"
+inital_state = SubResource("Resource_h5tnq")
+water_platform = false
+height_offset = -6
+item = "chest"

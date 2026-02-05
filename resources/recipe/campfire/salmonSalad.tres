@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://bbb2mf6b5sa0f"]
+
+[ext_resource type="Script" path="res://source/crafting/recipe.gd" id="1_rjum1"]
+
+[resource]
+script = ExtResource("1_rjum1")
+item_ids = Array[String](["salmon", "cabage", "tomato"])
+item_tags = Array[int]([])
+result_id = "salmonSalad"

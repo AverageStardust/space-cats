@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://bitt7raqjkxon"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_vui5n"]
+
+[resource]
+script = ExtResource("1_vui5n")
+name = "Flint Pickaxe"
+description = "Breaks rocks"
+texture_offset = Vector2i(2, 5)
+stack_size = 1
+tags = Array[int]([])
+entity = ""
+meal_value = 0
+tool_type = 1
+tool_strength = 3
+tool_specialty = ""
+max_durability = 8

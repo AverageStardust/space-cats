@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TileSurface" load_steps=2 format=3 uid="uid://c41e73lbiyqny"]
+
+[ext_resource type="Script" path="res://source/tile/tileSurface.gd" id="3_2u8p8"]
+
+[resource]
+script = ExtResource("3_2u8p8")
+water = true
+texture_offset = Vector2i(1, 0)

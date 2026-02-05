@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvat1omrgnadc"]
+
+[ext_resource type="Script" path="res://source/scene/title.gd" id="1_56ck8"]
+[ext_resource type="PackedScene" uid="uid://jicxclyjw3eq" path="res://source/ui/oldpanel.tscn" id="1_iejg6"]
+[ext_resource type="PackedScene" uid="uid://b45jqgmu7wtpq" path="res://source/ui/sceneBackground.tscn" id="2_l61x6"]
+[ext_resource type="Theme" uid="uid://bdox8dkbg1rx0" path="res://assets/theme.tres" id="4_abv4h"]
+[ext_resource type="Script" path="res://source/ui/clicklyButton.gd" id="5_881mm"]
+
+[node name="Title" type="Node"]
+script = ExtResource("1_56ck8")
+
+[node name="BackgroundScene" parent="." instance=ExtResource("2_l61x6")]
+
+[node name="Panel" parent="." instance=ExtResource("1_iejg6")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -120.0
+offset_right = 184.0
+offset_bottom = 120.0
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -96.0
+offset_right = 120.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_abv4h")
+theme_override_font_sizes/font_size = 42
+text = "Space Cats"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "Start"
+script = ExtResource("5_881mm")
+
+[node name="Options" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"
+script = ExtResource("5_881mm")
+
+[node name="Credits" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Credits"
+script = ExtResource("5_881mm")
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit"
+script = ExtResource("5_881mm")
+
+[node name="VersionLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

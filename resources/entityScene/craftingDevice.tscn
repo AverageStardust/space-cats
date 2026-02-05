@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://7vkqdpm0eoh7"]
+
+[ext_resource type="Script" path="res://resources/entityScene/craftingDevice.gd" id="1_33uom"]
+[ext_resource type="PackedScene" uid="uid://d2ybe1ilfjvob" path="res://source/utility/interactionBox.tscn" id="2_lto33"]
+
+[node name="CraftingDevice" type="Node2D"]
+script = ExtResource("1_33uom")
+
+[node name="InteractionBox" parent="." instance=ExtResource("2_lto33")]
+position = Vector2(0, -16)
+interaction = &"toggle_crafting"

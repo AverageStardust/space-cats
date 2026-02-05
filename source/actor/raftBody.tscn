@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb4lre2rru0if"]
+
+[ext_resource type="Script" path="res://source/actor/raftBody.gd" id="1_yo06i"]
+[ext_resource type="Texture2D" uid="uid://bvo8wg67fiqkf" path="res://assets/raft.png" id="2_fce3m"]
+[ext_resource type="Script" path="res://source/actor/actor.gd" id="2_x18yo"]
+
+[sub_resource type="Resource" id="Resource_42fji"]
+script = ExtResource("2_x18yo")
+position = Vector2(0, 0)
+velocity = Vector2(0, 0)
+rotation = 0
+surface_velocity = 0.0
+angular_velocity = 0.0
+ground_placement = true
+ground_movment = true
+tile_width = 0.45
+surface_offset = -14.0
+max_speed = 0.0
+max_water_speed = 1.5
+walk_strength = 0.05
+stop_strength = 0.1
+alignment_strength = 0.25
+space_movment = false
+acceleration = 0.0
+max_angular_velocity = 0.0
+space_dampening = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l731"]
+size = Vector2(12, 34)
+
+[node name="RaftBody" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_yo06i")
+actor = SubResource("Resource_42fji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.35933e-12, -6)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8l731")
+
+[node name="Raft" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_fce3m")

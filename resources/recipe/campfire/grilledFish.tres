@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://ceuf50sh15xny"]
+
+[ext_resource type="Script" path="res://source/crafting/recipe.gd" id="1_ghjcs"]
+
+[resource]
+script = ExtResource("1_ghjcs")
+item_ids = Array[String]([])
+item_tags = Array[int]([4])
+result_id = "grilledFish"

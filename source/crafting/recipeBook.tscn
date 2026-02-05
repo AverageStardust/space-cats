@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://boapwgym8ued7"]
+
+[ext_resource type="Script" path="res://source/crafting/recipeBook.gd" id="1_hp6kq"]
+[ext_resource type="AudioStream" uid="uid://cax6liak6ipp5" path="res://assets/audio/interface/discovery.ogg" id="2_kw1r0"]
+
+[node name="RecipeBook" type="TabContainer"]
+custom_minimum_size = Vector2(332, 234)
+offset_right = 480.0
+offset_bottom = 150.0
+tabs_visible = false
+script = ExtResource("1_hp6kq")
+
+[node name="DiscoverySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kw1r0")
+bus = &"Interface"
+
+[connection signal="tab_clicked" from="." to="." method="_on_tab_clicked"]

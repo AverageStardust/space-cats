@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://clnjo1gcj6hyw"]
+
+[ext_resource type="Script" path="res://resources/entityScene/landingPad.gd" id="1_6gbey"]
+[ext_resource type="Texture2D" uid="uid://pof2iy2wahtu" path="res://assets/landingPad.png" id="1_cygtm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2b2v"]
+radius = 12.0
+height = 92.0
+
+[sub_resource type="Gradient" id="Gradient_mx53c"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pjt3e"]
+gradient = SubResource("Gradient_mx53c")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="LandingPad" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_6gbey")
+
+[node name="LandingPad" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_cygtm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-48, 10, -48, -2, -44, -10, 44, -10, 48, -2, 48, 10)
+
+[node name="LandingArea" type="Area2D" parent="."]
+position = Vector2(1, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandingArea"]
+position = Vector2(0, -9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v2b2v")
+
+[node name="LeftPointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-40, -13)
+color = Color(0.868801, 0, 0.225203, 1)
+texture = SubResource("GradientTexture2D_pjt3e")
+height = 1.0
+
+[node name="RightPointLight2D" type="PointLight2D" parent="."]
+position = Vector2(40, -13)
+color = Color(0.868801, 0, 0.225203, 1)
+texture = SubResource("GradientTexture2D_pjt3e")
+height = 1.0
+
+[connection signal="body_entered" from="LandingArea" to="." method="_on_landing_area_body_entered"]
+[connection signal="body_exited" from="LandingArea" to="." method="_on_landing_area_body_exited"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://leu743f6it5u"]
+
+[ext_resource type="Script" path="res://source/scene/credits.gd" id="1_dhlws"]
+[ext_resource type="PackedScene" uid="uid://b45jqgmu7wtpq" path="res://source/ui/sceneBackground.tscn" id="2_k2dp1"]
+[ext_resource type="PackedScene" uid="uid://c7hh5nucn0i5j" path="res://source/ui/texturedPanel.tscn" id="3_f5bum"]
+[ext_resource type="Theme" uid="uid://bdox8dkbg1rx0" path="res://assets/theme.tres" id="4_era01"]
+[ext_resource type="Script" path="res://source/ui/clicklyButton.gd" id="5_cj0yv"]
+
+[node name="Credits" type="Node"]
+script = ExtResource("1_dhlws")
+
+[node name="BackgroundScene" parent="." instance=ExtResource("2_k2dp1")]
+
+[node name="TexturedPanel" parent="." instance=ExtResource("3_f5bum")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -86.0
+offset_right = 200.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TexturedPanel"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TexturedPanel/VBoxContainer"]
+custom_minimum_size = Vector2(416, 160)
+layout_mode = 2
+theme = ExtResource("4_era01")
+bbcode_enabled = true
+text = "Wren Durbano       Art, Design, Programming
+Jess McLeod        Meow Sounds
+
+[url=https://www.kenney.nl/]Kenney[/url]             Button Hints, Sound Effects ([url=https://creativecommons.org/public-domain/cc0/]CC0[/url])
+[url=https://opengameart.org/]OpenGameArt[/url]        Sound Effects ([url=https://creativecommons.org/public-domain/cc0/]CC0[/url])
+[url=https://modarchive.org/module.php?40503]Solid Energy[/url]       \"Dreams\" Music ([url=https://creativecommons.org/licenses/by/4.0/]CC BY 4.0[/url])
+
+[url=https://github.com/AtkinTC/aseprite_importer/]Aseprite Importer[/url]  Middleware ([url=res://addons/aseprite_importer/license.txt]MIT[/url])
+[url=https://github.com/ephread/inkgd/]Inkgd[/url]              Middleware ([url=res://addons/inkgd/license.txt]MIT[/url])
+[url=https://github.com/binogure-studio/godot-uuid/]Godot UUID[/url]         Middleware ([url=res://addons/uuid/license.txt]MIT[/url])"
+
+[node name="Back" type="Button" parent="TexturedPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme = ExtResource("4_era01")
+text = "Return"
+script = ExtResource("5_cj0yv")
+
+[connection signal="pressed" from="TexturedPanel/VBoxContainer/Back" to="." method="_on_back_pressed"]

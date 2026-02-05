@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://lo1582ik6uj3"]
+
+[ext_resource type="Script" path="res://source/crafting/recipePage.gd" id="1_802oi"]
+
+[node name="RecipePage" type="ScrollContainer"]
+custom_minimum_size = Vector2(324, 212)
+follow_focus = true
+script = ExtResource("1_802oi")
+
+[node name="FlowContainer" type="HFlowContainer" parent="."]
+custom_minimum_size = Vector2(324, 0)
+layout_mode = 2
+size_flags_horizontal = 0

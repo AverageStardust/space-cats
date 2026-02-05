@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bx11xvrow41jh"
+valid=false
+
+[deps]
+
+source_file="res://assets/sheet/eclipse.json"
+
+[params]
+
+compress=true

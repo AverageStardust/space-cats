@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=6 format=3 uid="uid://bn46o0vi8hqor"]
+
+[ext_resource type="Script" path="res://resources/entityScene/collectableState.gd" id="1_yk6ot"]
+[ext_resource type="Script" path="res://resources/entityScene/collectableOptions.gd" id="2_ppw0m"]
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="3_eok4h"]
+
+[sub_resource type="Resource" id="Resource_owcv3"]
+script = ExtResource("1_yk6ot")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_nmd7m"]
+script = ExtResource("2_ppw0m")
+texture_offset = Vector2i(5, 4)
+broken_texture_offset = Vector2i(5, 5)
+sound = 1
+break_time = 0.25
+break_stength = 0
+tool_type = 0
+custom_interaction = ""
+drops = Array[String](["cabage"])
+regrow_time = 90.0
+fertilizable = true
+
+[resource]
+script = ExtResource("3_eok4h")
+texture_offset = Vector2i(0, 0)
+has_sprite = true
+scene_id = "collectable"
+scene_options = SubResource("Resource_nmd7m")
+inital_state = SubResource("Resource_owcv3")
+water_platform = false
+height_offset = -6
+item = ""

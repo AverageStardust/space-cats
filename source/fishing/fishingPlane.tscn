@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://kurkq5nv4oqh"]
+
+[ext_resource type="Shader" path="res://source/fishing/fishingPlane.gdshader" id="1_3e3m6"]
+[ext_resource type="Texture2D" uid="uid://v2qu5fi8aygc" path="res://assets/ui/fishingWater.png" id="1_3oy0a"]
+[ext_resource type="Script" path="res://source/fishing/fishingPlane.gd" id="2_s5rpm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_on485"]
+shader = ExtResource("1_3e3m6")
+shader_parameter/wave_phase = null
+
+[node name="Fishing Plane" type="Polygon2D"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_on485")
+texture = ExtResource("1_3oy0a")
+script = ExtResource("2_s5rpm")

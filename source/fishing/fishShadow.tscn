@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://83thk62kop1v"]
+
+[ext_resource type="Script" path="res://source/fishing/fishShadow.gd" id="1_o37rp"]
+
+[sub_resource type="Gradient" id="Gradient_4yayi"]
+offsets = PackedFloat32Array(0, 0.4, 0.9, 1)
+colors = PackedColorArray(0, 0, 0, 0.784314, 0, 0, 0, 0.705882, 0, 0, 0, 0.235294, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_16ewy"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_4yayi")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_airdi"]
+offsets = PackedFloat32Array(0.570447, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_tdjsm"]
+colors = PackedColorArray(0.741176, 0.968627, 0.968627, 1, 0.439216, 0.890196, 0.94902, 1)
+
+[node name="FishShadow" type="Sprite2D"]
+position = Vector2(0, 1)
+texture = SubResource("GradientTexture2D_16ewy")
+script = ExtResource("1_o37rp")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 1
+amount = 12
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 360)
+initial_velocity_min = 60.0
+initial_velocity_max = 100.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_airdi")
+color_initial_ramp = SubResource("Gradient_tdjsm")

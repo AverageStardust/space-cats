@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://bi5rht5iidddl"]
+
+[ext_resource type="Script" path="res://source/fishing/fish.gd" id="1_jus5r"]
+
+[resource]
+script = ExtResource("1_jus5r")
+speed = 24.0
+pattern = 0
+size = 15.0
+item_id = "anchovy"

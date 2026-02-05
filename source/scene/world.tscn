@@ -1,0 +1,278 @@
+[gd_scene load_steps=33 format=3 uid="uid://b7fgu2fgfnt33"]
+
+[ext_resource type="Script" path="res://source/scene/world.gd" id="1_geder"]
+[ext_resource type="PackedScene" uid="uid://bvknwwvyqwl4v" path="res://source/actor/playerBody.tscn" id="1_rwvd0"]
+[ext_resource type="PackedScene" uid="uid://c8fo88b1qc2e2" path="res://source/utility/console.tscn" id="2_nguju"]
+[ext_resource type="PackedScene" uid="uid://c7hh5nucn0i5j" path="res://source/ui/texturedPanel.tscn" id="3_2n1xd"]
+[ext_resource type="PackedScene" uid="uid://bljp1fur1u4ov" path="res://source/celestial/celestialBody.tscn" id="3_i4hm6"]
+[ext_resource type="PackedScene" uid="uid://baatprxlmbsh7" path="res://source/inventory/volumeInterface.tscn" id="3_iw75v"]
+[ext_resource type="Script" path="res://source/actor/actor.gd" id="4_vt8ek"]
+[ext_resource type="PackedScene" uid="uid://dmsech0awdvd4" path="res://source/crafting/craftingInterface.tscn" id="5_6j6h4"]
+[ext_resource type="Script" path="res://source/actor/player.gd" id="5_br1k0"]
+[ext_resource type="Script" path="res://source/celestial/celestial.gd" id="5_lfp53"]
+[ext_resource type="Texture2D" uid="uid://7ehv71x1dlky" path="res://assets/ui/recipeBook.png" id="6_4mnhf"]
+[ext_resource type="PackedScene" uid="uid://boapwgym8ued7" path="res://source/crafting/recipeBook.tscn" id="6_8o0es"]
+[ext_resource type="Script" path="res://source/inventory/inventoryVolume.gd" id="6_kh1ka"]
+[ext_resource type="PackedScene" uid="uid://do2md6yl70f5a" path="res://source/fishing/fishingInterface.tscn" id="7_nnvvk"]
+[ext_resource type="Script" path="res://source/celestial/MusicRegion.gd" id="9_y40xg"]
+[ext_resource type="PackedScene" uid="uid://bfe0kp8g63v3d" path="res://source/actor/smokeyBody.tscn" id="10_nk651"]
+[ext_resource type="PackedScene" uid="uid://cgyfvrce7ai74" path="res://source/actor/eclipseBody.tscn" id="11_j53w1"]
+[ext_resource type="PackedScene" uid="uid://c8asme2i60g4h" path="res://source/actor/shipBody.tscn" id="12_8b356"]
+[ext_resource type="PackedScene" uid="uid://deppkx0p36pla" path="res://source/radar/radarInterface.tscn" id="12_ep12x"]
+[ext_resource type="PackedScene" uid="uid://bmhp4umtxh2t0" path="res://source/dialogue/dialogueInterface.tscn" id="18_phab1"]
+[ext_resource type="Script" path="res://source/ui/clicklyButton.gd" id="20_wgeqd"]
+
+[sub_resource type="Resource" id="Resource_kv51w"]
+script = ExtResource("4_vt8ek")
+position = Vector2(0, 0)
+velocity = Vector2(0, 0)
+rotation = 0
+surface_velocity = 0.0
+angular_velocity = 0.0
+ground_placement = true
+ground_movment = true
+tile_width = 0.25
+surface_offset = -6.0
+max_speed = 2.0
+max_water_speed = 0.0
+walk_strength = 0.1
+stop_strength = 0.2
+alignment_strength = 0.25
+space_movment = false
+acceleration = 0.0
+max_angular_velocity = 0.0
+space_dampening = 0.0
+
+[sub_resource type="Resource" id="Resource_ry56j"]
+script = ExtResource("6_kh1ka")
+slots = Array[Resource("res://source/inventory/inventorySlot.gd")]([])
+capacity = 12
+focused_index = 0
+
+[sub_resource type="Resource" id="Resource_yyon6"]
+resource_local_to_scene = true
+script = ExtResource("5_br1k0")
+actor = SubResource("Resource_kv51w")
+volume = SubResource("Resource_ry56j")
+tutorials_done = {
+"move_left": false,
+"move_right": false
+}
+
+[sub_resource type="Gradient" id="Gradient_xwvnj"]
+offsets = PackedFloat32Array(0.05, 0.15, 0.25, 0.45, 0.75, 0.95)
+colors = PackedColorArray(0.403922, 0.301961, 0.333333, 1, 0.541176, 0.419608, 0.403922, 1, 0.631373, 0.360784, 0.317647, 1, 0.631373, 0.360784, 0.317647, 1, 0.517647, 0.262745, 0.286275, 1, 0.380392, 0.184314, 0.247059, 1)
+
+[sub_resource type="Resource" id="Resource_2n3qp"]
+script = ExtResource("9_y40xg")
+start_angle = -2.7
+end_angle = 0.7
+volumes = Array[float]([0.0, -60.0, -60.0, -60.0])
+
+[sub_resource type="Resource" id="Resource_mpr7w"]
+script = ExtResource("9_y40xg")
+start_angle = 1.2
+end_angle = 2.5
+volumes = Array[float]([0.0, 0.0, -60.0, -60.0])
+
+[sub_resource type="Resource" id="Resource_aorjp"]
+script = ExtResource("9_y40xg")
+start_angle = 2.6
+end_angle = -2.9
+volumes = Array[float]([0.0, -60.0, 0.0, -60.0])
+
+[sub_resource type="Resource" id="Resource_lyt2i"]
+script = ExtResource("5_lfp53")
+density = 1.0
+color_ramp = SubResource("Gradient_xwvnj")
+noise_frequency = 0.09
+noise_type = 0
+tiles = Array[Resource("res://source/tile/tile.gd")]([])
+has_waves = true
+music_regions = Array[ExtResource("9_y40xg")]([SubResource("Resource_2n3qp"), SubResource("Resource_mpr7w"), SubResource("Resource_aorjp")])
+orbital_velocity = 0.0
+orbital_radius = 0.0
+orbital_phase = 0.0
+orbital_time = 0.0
+satellites = {}
+
+[sub_resource type="Gradient" id="Gradient_hfhjj"]
+offsets = PackedFloat32Array(0.0471698, 0.146226, 0.25, 0.34434, 0.54717)
+colors = PackedColorArray(0.447059, 0.352941, 0.423529, 1, 0.309804, 0.262745, 0.341176, 1, 0.756863, 0.709804, 0.741176, 1, 0.678431, 0.615686, 0.658824, 1, 0.6, 0.52549, 0.576471, 1)
+
+[sub_resource type="Resource" id="Resource_3o4ot"]
+script = ExtResource("9_y40xg")
+start_angle = -3.15
+end_angle = 3.15
+volumes = Array[float]([0.0, 0.0, 0.0, -60.0])
+
+[sub_resource type="Resource" id="Resource_hoy6i"]
+script = ExtResource("5_lfp53")
+density = 1.0
+color_ramp = SubResource("Gradient_hfhjj")
+noise_frequency = 0.011
+noise_type = 2
+tiles = Array[Resource("res://source/tile/tile.gd")]([])
+has_waves = false
+music_regions = Array[ExtResource("9_y40xg")]([SubResource("Resource_3o4ot")])
+orbital_velocity = 20.0
+orbital_radius = 1800.0
+orbital_phase = 0.0
+orbital_time = 0.0
+satellites = {}
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_geder")
+
+[node name="ConsoleWindow" parent="." instance=ExtResource("2_nguju")]
+title = "Console"
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.526498, 0.506485, 0.723691, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.509804, 0.505882, 0.321569, 1)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 4.0
+height = 0.55
+
+[node name="Player" parent="." instance=ExtResource("1_rwvd0")]
+player = SubResource("Resource_yyon6")
+
+[node name="Ship" parent="." instance=ExtResource("12_8b356")]
+
+[node name="Home" parent="." instance=ExtResource("3_i4hm6")]
+celestial = SubResource("Resource_lyt2i")
+
+[node name="SmokeyBody" parent="Home" instance=ExtResource("10_nk651")]
+spawn_angle = 0.25
+
+[node name="Moon" parent="Home" instance=ExtResource("3_i4hm6")]
+celestial = SubResource("Resource_hoy6i")
+
+[node name="EclipseBody" parent="Home/Moon" instance=ExtResource("11_j53w1")]
+spawn_angle = 2.61
+
+[node name="Interface" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HotbarPanel" parent="Interface" instance=ExtResource("3_2n1xd")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -4.0
+offset_right = 24.0
+offset_bottom = 44.0
+grow_horizontal = 2
+
+[node name="Hotbar" parent="Interface/HotbarPanel" instance=ExtResource("3_iw75v")]
+layout_mode = 2
+is_hotbar = true
+
+[node name="ChestPanel" parent="Interface" instance=ExtResource("3_2n1xd")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 48.0
+offset_right = 24.0
+offset_bottom = 96.0
+grow_horizontal = 2
+
+[node name="Chest" parent="Interface/ChestPanel" instance=ExtResource("3_iw75v")]
+layout_mode = 2
+
+[node name="CraftingPanel" parent="Interface" instance=ExtResource("3_2n1xd")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 48.0
+offset_right = 60.0
+offset_bottom = 96.0
+grow_horizontal = 2
+
+[node name="Crafting" parent="Interface/CraftingPanel" instance=ExtResource("5_6j6h4")]
+layout_mode = 2
+
+[node name="FishingPanel" parent="Interface" instance=ExtResource("3_2n1xd")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 48.0
+offset_right = 24.0
+offset_bottom = 96.0
+grow_horizontal = 2
+
+[node name="FishingInterface" parent="Interface/FishingPanel" instance=ExtResource("7_nnvvk")]
+layout_mode = 2
+
+[node name="RadarPanel" parent="Interface" instance=ExtResource("3_2n1xd")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -88.0
+offset_right = 104.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RadarInterface" parent="Interface/RadarPanel" instance=ExtResource("12_ep12x")]
+layout_mode = 2
+
+[node name="RecipePanel" parent="Interface" instance=ExtResource("3_2n1xd")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.0
+offset_top = 48.0
+offset_right = 174.0
+offset_bottom = 298.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+
+[node name="RecipeBook" parent="Interface/RecipePanel" instance=ExtResource("6_8o0es")]
+layout_mode = 2
+
+[node name="DialoguePanel" parent="Interface" instance=ExtResource("3_2n1xd")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -239.0
+offset_top = -82.0
+offset_right = 239.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+
+[node name="DialogueInterface" parent="Interface/DialoguePanel" instance=ExtResource("18_phab1")]
+layout_mode = 2
+
+[node name="RecipeButton" type="Button" parent="Interface"]
+offset_left = 523.0
+offset_top = 2.0
+offset_right = 563.0
+offset_bottom = 42.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Recipes"
+icon = ExtResource("6_4mnhf")
+script = ExtResource("20_wgeqd")
+
+[connection signal="pressed" from="Interface/RecipeButton" to="." method="_on_recipe_button_pressed"]

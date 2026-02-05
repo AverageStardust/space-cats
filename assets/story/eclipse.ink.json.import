@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dxxvgdc123k7o"
+path="res://.godot/imported/eclipse.ink.json-e0633afdd4a35a3ed70400bddf24b33c.res"
+
+[deps]
+
+source_file="res://assets/story/eclipse.ink.json"
+dest_files=["res://.godot/imported/eclipse.ink.json-e0633afdd4a35a3ed70400bddf24b33c.res"]
+
+[params]
+
+compress=true

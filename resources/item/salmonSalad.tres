@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://b7r8ptiyo482l"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_4wi3w"]
+
+[resource]
+script = ExtResource("1_4wi3w")
+name = "Salmon Salad"
+description = ""
+texture_offset = Vector2i(15, 7)
+stack_size = 99
+tags = Array[int]([])
+entity = ""
+meal_value = 4
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

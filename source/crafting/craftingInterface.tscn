@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmsech0awdvd4"]
+
+[ext_resource type="Script" path="res://source/crafting/craftingInterface.gd" id="1_8ui8l"]
+[ext_resource type="PackedScene" uid="uid://baatprxlmbsh7" path="res://source/inventory/volumeInterface.tscn" id="1_q6d1o"]
+[ext_resource type="Script" path="res://source/inventory/inventoryVolume.gd" id="2_v5obh"]
+[ext_resource type="PackedScene" uid="uid://cbtd5cnbukuc5" path="res://source/crafting/recipeIcon.tscn" id="4_4753j"]
+[ext_resource type="Texture2D" uid="uid://ca0g3w4sj0lar" path="res://assets/ui/craftingIcon.png" id="5_fbmyx"]
+[ext_resource type="AudioStream" uid="uid://c7n8n6hg43jv7" path="res://assets/audio/interface/fail.ogg" id="6_x4fq4"]
+
+[sub_resource type="Resource" id="Resource_xwuxu"]
+script = ExtResource("2_v5obh")
+slots = Array[Resource("res://source/inventory/inventorySlot.gd")]([])
+capacity = 0
+focused_index = -1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv6rq"]
+resource_local_to_scene = true
+atlas = ExtResource("5_fbmyx")
+region = Rect2(0, 0, 32, 32)
+
+[node name="CraftingInterface" type="HBoxContainer"]
+offset_right = 96.0
+offset_bottom = 32.0
+theme_override_constants/separation = 0
+script = ExtResource("1_8ui8l")
+
+[node name="Input" parent="." instance=ExtResource("1_q6d1o")]
+layout_mode = 2
+volume = SubResource("Resource_xwuxu")
+
+[node name="RecipeIcon" parent="." instance=ExtResource("4_4753j")]
+layout_mode = 2
+texture = SubResource("AtlasTexture_sv6rq")
+
+[node name="Output" parent="." instance=ExtResource("1_q6d1o")]
+layout_mode = 2
+allow_fill = false
+allow_empty = false
+
+[node name="FailSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x4fq4")

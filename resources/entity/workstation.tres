@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=4 format=3 uid="uid://c1bepovefagnp"]
+
+[ext_resource type="Script" path="res://resources/entityScene/craftingDeviceOptions.gd" id="1_gvl2a"]
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="2_xwjus"]
+
+[sub_resource type="Resource" id="Resource_i2t21"]
+script = ExtResource("1_gvl2a")
+recipe_folder = "assembly"
+capacity = 2
+failure_result = "random"
+
+[resource]
+script = ExtResource("2_xwjus")
+texture_offset = Vector2i(3, 6)
+has_sprite = true
+scene_id = "craftingDevice"
+scene_options = SubResource("Resource_i2t21")
+water_platform = false
+height_offset = -6
+item = "workstation"

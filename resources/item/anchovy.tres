@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://qikanee36i11"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_f0hb5"]
+
+[resource]
+script = ExtResource("1_f0hb5")
+name = "Anchovy"
+description = ""
+texture_offset = Vector2i(0, 3)
+stack_size = 99
+tags = Array[int]([])
+entity = ""
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

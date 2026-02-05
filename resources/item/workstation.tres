@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://c3bpukvsgt117"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_cj8sg"]
+
+[resource]
+script = ExtResource("1_cj8sg")
+name = "Workstation"
+description = "Crafts items"
+texture_offset = Vector2i(2, 4)
+stack_size = 99
+tags = Array[int]([])
+entity = "workstation"
+meal_value = 0
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

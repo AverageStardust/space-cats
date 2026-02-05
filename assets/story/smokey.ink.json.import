@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dwj0fwf3ju0vp"
+path="res://.godot/imported/smokey.ink.json-b906a0ed98def1d7c5cabefd7854ee3e.res"
+
+[deps]
+
+source_file="res://assets/story/smokey.ink.json"
+dest_files=["res://.godot/imported/smokey.ink.json-b906a0ed98def1d7c5cabefd7854ee3e.res"]
+
+[params]
+
+compress=true

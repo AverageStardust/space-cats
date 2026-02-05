@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://by8pqk4tdfkda"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_lbqrv"]
+
+[resource]
+script = ExtResource("1_lbqrv")
+name = "Copper Pickaxe"
+description = "Breaks <item=ironOre> faster"
+texture_offset = Vector2i(4, 5)
+stack_size = 1
+tags = Array[int]([])
+entity = ""
+meal_value = 0
+tool_type = 1
+tool_strength = 4
+tool_specialty = "ironOre"
+max_durability = 15

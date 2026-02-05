@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://2eqv7ms40a2l"]
+
+[ext_resource type="Script" path="res://source/crafting/recipe.gd" id="1_4qcr4"]
+
+[resource]
+script = ExtResource("1_4qcr4")
+item_ids = Array[String](["rope", "ironIngot"])
+item_tags = Array[int]([])
+result_id = "ironSpear"

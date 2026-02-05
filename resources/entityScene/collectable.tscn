@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh66spsn0o13n"]
+
+[ext_resource type="PackedScene" uid="uid://d2ybe1ilfjvob" path="res://source/utility/interactionBox.tscn" id="1_cqxyr"]
+[ext_resource type="Script" path="res://resources/entityScene/collectable.gd" id="1_icatv"]
+[ext_resource type="Script" path="res://source/utility/randomAudioStreamPlayer.gd" id="3_bem87"]
+
+[sub_resource type="Gradient" id="Gradient_gim80"]
+offsets = PackedFloat32Array(0.570447, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_oqiro"]
+colors = PackedColorArray(0.156863, 0.596078, 0.117647, 1, 0.615686, 0.854902, 0.0235294, 1)
+
+[node name="Collectable" type="Node2D"]
+script = ExtResource("1_icatv")
+
+[node name="InteractionBox" parent="." instance=ExtResource("1_cqxyr")]
+position = Vector2(0, -16)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -16)
+emitting = false
+amount = 12
+lifetime = 0.6
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_gim80")
+color_initial_ramp = SubResource("Gradient_oqiro")
+
+[node name="RockSound" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = &"World"
+script = ExtResource("3_bem87")
+path = "res://assets/audio/collectable/rock_%03d.ogg"
+amount = 5
+
+[node name="RustleSound" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
+bus = &"World"
+script = ExtResource("3_bem87")
+path = "res://assets/audio/collectable/rustle_%03d.ogg"
+amount = 6
+
+[node name="WoodSound" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+bus = &"World"
+script = ExtResource("3_bem87")
+path = "res://assets/audio/collectable/wood_%03d.ogg"
+amount = 5

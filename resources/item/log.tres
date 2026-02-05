@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://bjqf3jo7uxwpo"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_0o3d3"]
+
+[resource]
+script = ExtResource("1_0o3d3")
+name = "Log"
+meal_value = 0
+tags = Array[int]([])
+texture_offset = Vector2i(4, 0)

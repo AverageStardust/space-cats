@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8ciea8odavsu"]
+
+[ext_resource type="Script" path="res://resources/entityScene/craftingDevice.gd" id="1_h0whp"]
+[ext_resource type="PackedScene" uid="uid://d2ybe1ilfjvob" path="res://source/utility/interactionBox.tscn" id="2_xxobf"]
+[ext_resource type="AudioStream" uid="uid://dljuk24fnioyl" path="res://assets/audio/world/fire.ogg" id="3_s0va6"]
+
+[sub_resource type="Gradient" id="Gradient_nmxip"]
+offsets = PackedFloat32Array(0.0737705, 0.221311, 0.639344, 1)
+colors = PackedColorArray(0.466181, 0.466181, 0.466181, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.466181, 0.466181, 0.466181, 0)
+
+[sub_resource type="Gradient" id="Gradient_exlri"]
+colors = PackedColorArray(0.320244, 0.320244, 0.320244, 1, 0.567368, 0.567368, 0.567368, 1)
+
+[sub_resource type="Curve" id="Curve_q2gtr"]
+_data = [Vector2(0, 0), 0.0, 31.0212, 0, 0, Vector2(0.0882353, 0.931269), 1.08497, 1.08497, 0, 0, Vector2(0.683824, 0.61707), -1.69953, -1.69953, 0, 0, Vector2(0.963235, 0.273414), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_2bckg"]
+offsets = PackedFloat32Array(0, 0.25, 0.647541, 0.889344, 1)
+colors = PackedColorArray(1, 0.972549, 0.745098, 1, 0.960784, 0.913725, 0.0117647, 1, 0.886275, 0.443137, 0.137255, 1, 0.72549, 0, 0.223529, 1, 0.68511, 0.407772, 0.518204, 0)
+
+[sub_resource type="Gradient" id="Gradient_ixwjj"]
+colors = PackedColorArray(1, 0.840086, 0.880934, 1, 0.967245, 0.951585, 0.811066, 1)
+
+[node name="Campfire" type="Node2D"]
+script = ExtResource("1_h0whp")
+
+[node name="InteractionBox" parent="." instance=ExtResource("2_xxobf")]
+position = Vector2(0, -16)
+interaction = &"toggle_crafting"
+
+[node name="SmokeParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, -22)
+lifetime = 0.9
+explosiveness = 0.2
+emission_shape = 1
+emission_sphere_radius = 6.0
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+linear_accel_min = 25.0
+linear_accel_max = 40.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color = Color(1, 1, 1, 0.705882)
+color_ramp = SubResource("Gradient_nmxip")
+color_initial_ramp = SubResource("Gradient_exlri")
+
+[node name="FireParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, -18)
+amount = 4
+lifetime = 0.6
+explosiveness = 0.2
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(0, -1)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+linear_accel_min = 30.0
+linear_accel_max = 50.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_q2gtr")
+color_ramp = SubResource("Gradient_2bckg")
+color_initial_ramp = SubResource("Gradient_ixwjj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -16)
+stream = ExtResource("3_s0va6")
+volume_db = -2.0
+autoplay = true
+max_distance = 200.0
+attenuation = 0.5
+bus = &"World"

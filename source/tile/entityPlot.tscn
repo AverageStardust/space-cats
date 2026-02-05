@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvy48k4y7bv3c"]
+
+[ext_resource type="Script" path="res://source/tile/entityPlot.gd" id="1_m870g"]
+
+[sub_resource type="Gradient" id="Gradient_g8b3d"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(0.176885, 0.828746, 0.512898, 0.501961, 0.176885, 0.828746, 0.512898, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aiiy8"]
+gradient = SubResource("Gradient_g8b3d")
+width = 28
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5v1j"]
+
+[node name="EntityPlot" type="Node2D"]
+script = ExtResource("1_m870g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -14.0
+offset_top = -32.0
+offset_right = 14.0
+texture = SubResource("GradientTexture2D_aiiy8")
+
+[node name="InteractionPanel" type="Panel" parent="."]
+visible = false
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n5v1j")
+
+[connection signal="gui_input" from="InteractionPanel" to="." method="_on_interaction_panel_gui_input"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvdilfa2dlfao"]
+
+[ext_resource type="Script" path="res://source/utility/itemDisplay.gd" id="1_gdm7f"]
+[ext_resource type="Shader" path="res://source/utility/itemShadow.gdshader" id="2_nugql"]
+[ext_resource type="Texture2D" uid="uid://cr8c40gf8m7hx" path="res://assets/atlas/items.png" id="3_32ylq"]
+[ext_resource type="Theme" uid="uid://bdox8dkbg1rx0" path="res://assets/theme.tres" id="4_dd3gk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ewl00"]
+shader = ExtResource("2_nugql")
+shader_parameter/shadow_color = null
+shader_parameter/shadow_mix = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0ywu"]
+resource_local_to_scene = true
+atlas = ExtResource("3_32ylq")
+region = Rect2(0, 0, 16, 16)
+
+[node name="ItemDisplay" type="Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_filter = 1
+script = ExtResource("1_gdm7f")
+
+[node name="ItemShadow" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ewl00")
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 17.0
+offset_bottom = 17.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stretch_mode = 2
+
+[node name="ItemTexture" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_x0ywu")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 3.0
+theme = ExtResource("4_dd3gk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.235294)
+theme_override_constants/outline_size = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="DurabilityMeter" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 16.0
+offset_bottom = 19.0
+
+[node name="DurabilityShadow" type="ColorRect" parent="DurabilityMeter"]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 3.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

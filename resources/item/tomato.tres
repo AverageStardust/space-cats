@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://c0846kx352evn"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_3pk6e"]
+
+[resource]
+script = ExtResource("1_3pk6e")
+name = "Tomato"
+meal_value = 0
+tags = Array[int]([0])
+texture_offset = Vector2i(2, 2)

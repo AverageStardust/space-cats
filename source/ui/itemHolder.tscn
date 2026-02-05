@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcc173ou2yelb"]
+
+[ext_resource type="PackedScene" uid="uid://bvdilfa2dlfao" path="res://source/utility/itemDisplay.tscn" id="1_24rp8"]
+[ext_resource type="Script" path="res://source/ui/itemHolder.gd" id="1_oqew8"]
+
+[node name="ItemHolder" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_oqew8")
+
+[node name="ItemDisplay" parent="." instance=ExtResource("1_24rp8")]

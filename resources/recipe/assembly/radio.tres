@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://b6cmtvoi8vrit"]
+
+[ext_resource type="Script" path="res://source/crafting/recipe.gd" id="1_wdnq2"]
+
+[resource]
+script = ExtResource("1_wdnq2")
+item_ids = Array[String](["mechanism", "ironIngot"])
+item_tags = Array[int]([])
+result_id = "radio"

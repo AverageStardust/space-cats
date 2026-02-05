@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmhp4umtxh2t0"]
+
+[ext_resource type="Script" path="res://source/dialogue/dialogueInterface.gd" id="1_1641h"]
+[ext_resource type="Texture2D" uid="uid://cwj5tpaylwueh" path="res://assets/ui/portraitSlot.png" id="1_f05oo"]
+[ext_resource type="Texture2D" uid="uid://dnathhavx3b46" path="res://assets/ui/portraits.png" id="3_gfglr"]
+[ext_resource type="Texture2D" uid="uid://dggdqqjiuqcen" path="res://assets/ui/continueButton.png" id="4_nqln1"]
+[ext_resource type="Script" path="res://source/utility/randomAudioStreamPlayer.gd" id="5_qa886"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryjhn"]
+atlas = ExtResource("3_gfglr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdqjm"]
+bg_color = Color(0.239216, 0.113725, 0.184314, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.129412, 0.172549, 0.227451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[node name="DialogueInterface" type="HBoxContainer"]
+offset_right = 68.0
+offset_bottom = 68.0
+theme_override_constants/separation = 8
+script = ExtResource("1_1641h")
+
+[node name="PortraitSlot" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("1_f05oo")
+
+[node name="ColorRect" type="ColorRect" parent="PortraitSlot"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 67.0
+offset_bottom = 67.0
+color = Color(0.380392, 0.184314, 0.247059, 1)
+
+[node name="Portrait" type="TextureRect" parent="PortraitSlot"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 67.0
+offset_bottom = 67.0
+texture = SubResource("AtlasTexture_ryjhn")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="Background" type="PanelContainer" parent="CenterContainer"]
+show_behind_parent = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jdqjm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NameLabel" type="RichTextLabel" parent="CenterContainer/Background/VBoxContainer"]
+custom_minimum_size = Vector2(384, 16)
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Background/VBoxContainer"]
+custom_minimum_size = Vector2(384, 50)
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/Background/VBoxContainer/RichTextLabel"]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 30.0
+offset_right = 384.0
+offset_bottom = 50.0
+icon = ExtResource("4_nqln1")
+
+[node name="MeowSound" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = &"Dialogue"
+script = ExtResource("5_qa886")
+path = "res://assets/audio/dialogue/meow_%03d.ogg"
+amount = 9
+
+[connection signal="meta_clicked" from="CenterContainer/Background/VBoxContainer/RichTextLabel" to="." method="_on_text_label_meta_clicked"]
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/RichTextLabel/ContinueButton" to="." method="_on_continue_button_pressed"]

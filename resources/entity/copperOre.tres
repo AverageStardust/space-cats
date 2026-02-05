@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=6 format=3 uid="uid://6a5txic15s6w"]
+
+[ext_resource type="Script" path="res://resources/entityScene/collectableState.gd" id="1_gx7ql"]
+[ext_resource type="Script" path="res://resources/entityScene/collectableOptions.gd" id="3_terk1"]
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="4_d6kwd"]
+
+[sub_resource type="Resource" id="Resource_egv31"]
+script = ExtResource("1_gx7ql")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_nmd7m"]
+script = ExtResource("3_terk1")
+texture_offset = Vector2i(3, 2)
+broken_texture_offset = Vector2i(3, 3)
+sound = 0
+break_time = 2.0
+break_stength = 3
+tool_type = 1
+custom_interaction = "copperOre"
+drops = Array[String](["copperOre"])
+regrow_time = 120.0
+fertilizable = false
+
+[resource]
+script = ExtResource("4_d6kwd")
+texture_offset = Vector2i(0, 0)
+has_sprite = true
+scene_id = "collectable"
+scene_options = SubResource("Resource_nmd7m")
+inital_state = SubResource("Resource_egv31")
+water_platform = false
+height_offset = -6
+item = ""

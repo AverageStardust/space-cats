@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx4vqt3oq83nx"]
+
+[ext_resource type="Script" path="res://source/camera/camera.gd" id="1_qb3hy"]
+[ext_resource type="PackedScene" uid="uid://bdt67p8t3bu1o" path="res://source/background/background.tscn" id="2_xx2xv"]
+[ext_resource type="Shader" path="res://source/camera/camera.gdshader" id="3_4gfkb"]
+[ext_resource type="Texture2D" uid="uid://cnqvgqn80wkak" path="res://assets/cameraLUT.png" id="4_kel2q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8bmx4"]
+radius = 200.0
+height = 500.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xema"]
+shader = ExtResource("3_4gfkb")
+shader_parameter/visibility = 1.0
+shader_parameter/lutTexture = ExtResource("4_kel2q")
+
+[node name="Camera" type="Camera2D"]
+ignore_rotation = false
+rotation_smoothing_speed = 20.0
+script = ExtResource("1_qb3hy")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-320, -180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(320, 180)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8bmx4")
+
+[node name="Background" parent="." instance=ExtResource("2_xx2xv")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_0xema")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

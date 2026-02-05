@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://b6opgm6b2s0x8"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_ox2yr"]
+
+[resource]
+script = ExtResource("1_ox2yr")
+name = "Mechanism"
+description = "Repairs the <name=SS Catnip>"
+texture_offset = Vector2i(11, 0)
+stack_size = 99
+tags = Array[int]([])
+entity = ""
+meal_value = 0
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

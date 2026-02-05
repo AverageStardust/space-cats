@@ -1,0 +1,180 @@
+[gd_scene load_steps=8 format=3 uid="uid://dccafsce360nw"]
+
+[ext_resource type="Script" path="res://source/scene/options.gd" id="1_l616x"]
+[ext_resource type="PackedScene" uid="uid://b45jqgmu7wtpq" path="res://source/ui/sceneBackground.tscn" id="2_8drbb"]
+[ext_resource type="PackedScene" uid="uid://c7hh5nucn0i5j" path="res://source/ui/texturedPanel.tscn" id="3_ukw24"]
+[ext_resource type="Theme" uid="uid://bdox8dkbg1rx0" path="res://assets/theme.tres" id="4_3cne7"]
+[ext_resource type="Script" path="res://source/ui/clicklyButton.gd" id="5_coqdn"]
+[ext_resource type="Script" path="res://source/ui/clicklyCheckButton.gd" id="5_j03cv"]
+[ext_resource type="Script" path="res://source/ui/clickySlider.gd" id="7_tiq23"]
+
+[node name="Options" type="Node"]
+script = ExtResource("1_l616x")
+
+[node name="Alert" type="ConfirmationDialog" parent="."]
+canvas_item_default_texture_filter = 0
+title = "Confirm"
+size = Vector2i(240, 100)
+content_scale_mode = 2
+content_scale_aspect = 1
+
+[node name="BackgroundScene" parent="." instance=ExtResource("2_8drbb")]
+
+[node name="TexturedPanel" parent="." instance=ExtResource("3_ukw24")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TexturedPanel"]
+layout_mode = 2
+
+[node name="GeneralLabel" type="Label" parent="TexturedPanel/VBoxContainer"]
+layout_mode = 2
+text = "------ General ------"
+horizontal_alignment = 1
+
+[node name="General" type="GridContainer" parent="TexturedPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="FullscreenLabel" type="Label" parent="TexturedPanel/VBoxContainer/General"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="Fullscreen" type="CheckButton" parent="TexturedPanel/VBoxContainer/General"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_3cne7")
+script = ExtResource("5_j03cv")
+
+[node name="ResetSave" type="Button" parent="TexturedPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_3cne7")
+text = "Reset Progress"
+script = ExtResource("5_coqdn")
+
+[node name="Spacer" type="Control" parent="TexturedPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="SoundTitle" type="Label" parent="TexturedPanel/VBoxContainer"]
+layout_mode = 2
+text = "------ Sound ------"
+horizontal_alignment = 1
+
+[node name="Sound" type="GridContainer" parent="TexturedPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="TexturedPanel/VBoxContainer/Sound"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+text = "Master"
+
+[node name="Master" type="HSlider" parent="TexturedPanel/VBoxContainer/Sound"]
+clip_contents = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource("7_tiq23")
+
+[node name="DialogueLabel" type="Label" parent="TexturedPanel/VBoxContainer/Sound"]
+layout_mode = 2
+text = "Dialogue"
+
+[node name="Dialogue" type="HSlider" parent="TexturedPanel/VBoxContainer/Sound"]
+clip_contents = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource("7_tiq23")
+
+[node name="InterfaceLabel" type="Label" parent="TexturedPanel/VBoxContainer/Sound"]
+layout_mode = 2
+text = "Interface"
+
+[node name="Interface" type="HSlider" parent="TexturedPanel/VBoxContainer/Sound"]
+clip_contents = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource("7_tiq23")
+
+[node name="MusicLabel" type="Label" parent="TexturedPanel/VBoxContainer/Sound"]
+layout_mode = 2
+text = "Music"
+
+[node name="Music" type="HSlider" parent="TexturedPanel/VBoxContainer/Sound"]
+clip_contents = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource("7_tiq23")
+
+[node name="WorldLabel" type="Label" parent="TexturedPanel/VBoxContainer/Sound"]
+layout_mode = 2
+text = "World"
+
+[node name="World" type="HSlider" parent="TexturedPanel/VBoxContainer/Sound"]
+clip_contents = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource("7_tiq23")
+
+[node name="Spacer2" type="Control" parent="TexturedPanel/VBoxContainer/Sound"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="TexturedPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme = ExtResource("4_3cne7")
+text = "Return"
+script = ExtResource("5_coqdn")
+
+[connection signal="toggled" from="TexturedPanel/VBoxContainer/General/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="TexturedPanel/VBoxContainer/ResetSave" to="." method="_on_reset_save_pressed"]
+[connection signal="drag_ended" from="TexturedPanel/VBoxContainer/Sound/Master" to="." method="_on_master_drag_ended"]
+[connection signal="value_changed" from="TexturedPanel/VBoxContainer/Sound/Master" to="." method="_on_master_value_changed"]
+[connection signal="drag_ended" from="TexturedPanel/VBoxContainer/Sound/Dialogue" to="." method="_on_dialogue_drag_ended"]
+[connection signal="value_changed" from="TexturedPanel/VBoxContainer/Sound/Dialogue" to="." method="_on_dialogue_value_changed"]
+[connection signal="drag_ended" from="TexturedPanel/VBoxContainer/Sound/Interface" to="." method="_on_interface_drag_ended"]
+[connection signal="value_changed" from="TexturedPanel/VBoxContainer/Sound/Interface" to="." method="_on_interface_value_changed"]
+[connection signal="drag_ended" from="TexturedPanel/VBoxContainer/Sound/Music" to="." method="_on_world_drag_ended"]
+[connection signal="value_changed" from="TexturedPanel/VBoxContainer/Sound/Music" to="." method="_on_music_value_changed"]
+[connection signal="drag_ended" from="TexturedPanel/VBoxContainer/Sound/World" to="." method="_on_world_drag_ended"]
+[connection signal="value_changed" from="TexturedPanel/VBoxContainer/Sound/World" to="." method="_on_world_value_changed"]
+[connection signal="pressed" from="TexturedPanel/VBoxContainer/Back" to="." method="_on_back_pressed"]

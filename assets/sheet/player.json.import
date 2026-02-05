@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://k3vkvopak73o"
+valid=false
+
+[deps]
+
+source_file="res://assets/sheet/player.json"
+
+[params]
+
+compress=true

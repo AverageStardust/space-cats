@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://dflyo3ilod5sa"]
+
+[ext_resource type="Script" path="res://source/crafting/recipe.gd" id="1_pf5rk"]
+
+[resource]
+script = ExtResource("1_pf5rk")
+item_ids = Array[String](["pansy", "fiber"])
+item_tags = Array[int]([])
+result_id = "flowerCrown"

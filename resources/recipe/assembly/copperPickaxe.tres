@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://bjfuk17lj8r2q"]
+
+[ext_resource type="Script" path="res://source/crafting/recipe.gd" id="1_swwbc"]
+
+[resource]
+script = ExtResource("1_swwbc")
+item_ids = Array[String](["twig", "copperIngot"])
+item_tags = Array[int]([])
+result_id = "copperPickaxe"

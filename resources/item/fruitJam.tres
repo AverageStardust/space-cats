@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://be3racevkjxxu"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_jq1w6"]
+
+[resource]
+script = ExtResource("1_jq1w6")
+name = "Fruit Jam"
+description = ""
+texture_offset = Vector2i(0, 7)
+stack_size = 99
+tags = Array[int]([])
+entity = ""
+meal_value = 1
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://cgwk8cipyfup8"]
+
+[ext_resource type="Script" path="res://source/fishing/fish.gd" id="1_s1un7"]
+
+[resource]
+script = ExtResource("1_s1un7")
+speed = 30.0
+pattern = 1
+size = 24.0
+item_id = "tuna"
+spawn_threshold = 0

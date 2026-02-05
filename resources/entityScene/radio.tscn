@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2m5fstm66eem"]
+
+[ext_resource type="PackedScene" uid="uid://bxoy7ovuurie1" path="res://source/dialogue/dialogueBox.tscn" id="1_oujvx"]
+[ext_resource type="Script" path="res://resources/entityScene/radio.gd" id="1_pvd4w"]
+[ext_resource type="AudioStream" uid="uid://dc4cajqo3bvbp" path="res://assets/audio/interface/radioNoise.ogg" id="3_0p0oi"]
+
+[node name="Radio" type="Node2D"]
+script = ExtResource("1_pvd4w")
+
+[node name="DialogueBox" parent="." instance=ExtResource("1_oujvx")]
+offset_top = -16.0
+offset_bottom = -16.0
+dialogue_id = "eclipse"
+
+[node name="RadioSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0p0oi")
+volume_db = -10.0
+bus = &"Dialogue"

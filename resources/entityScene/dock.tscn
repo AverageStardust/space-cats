@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvhds34tkvgig"]
+
+[ext_resource type="Script" path="res://resources/entityScene/dock.gd" id="1_mf564"]
+[ext_resource type="PackedScene" uid="uid://d2ybe1ilfjvob" path="res://source/utility/interactionBox.tscn" id="2_o2550"]
+
+[node name="Dock" type="Node2D"]
+script = ExtResource("1_mf564")
+
+[node name="InteractionBox" parent="." instance=ExtResource("2_o2550")]
+position = Vector2(0, -40)
+
+[node name="SpawnPointPlayer" type="Node2D" parent="."]
+position = Vector2(0, -18)
+
+[node name="SpawnPointLeft" type="Node2D" parent="."]
+position = Vector2(-24, -22)
+
+[node name="SpawnPointRight" type="Node2D" parent="."]
+position = Vector2(24, -22)

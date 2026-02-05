@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://2trrg843258v"]
+
+[ext_resource type="Script" path="res://source/fishing/fish.gd" id="1_5nhq8"]
+
+[resource]
+script = ExtResource("1_5nhq8")
+speed = 50.0
+pattern = 1
+size = 15.0
+item_id = "shrimp"
+spawn_threshold = 10

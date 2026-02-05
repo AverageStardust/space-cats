@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbm1mbp7gvtck"]
+
+[ext_resource type="Script" path="res://source/crafting/recipeDisplay.gd" id="1_7qckg"]
+[ext_resource type="PackedScene" uid="uid://baatprxlmbsh7" path="res://source/inventory/volumeInterface.tscn" id="2_d7v8m"]
+[ext_resource type="Script" path="res://source/inventory/inventoryVolume.gd" id="3_wucym"]
+[ext_resource type="PackedScene" uid="uid://cbtd5cnbukuc5" path="res://source/crafting/recipeIcon.tscn" id="4_pji07"]
+[ext_resource type="Texture2D" uid="uid://ca0g3w4sj0lar" path="res://assets/ui/craftingIcon.png" id="5_0qhgr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwxei"]
+bg_color = Color(0.239467, 0.114028, 0.185697, 0.501961)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Resource" id="Resource_tgrju"]
+resource_local_to_scene = true
+script = ExtResource("3_wucym")
+slots = Array[Resource("res://source/inventory/inventorySlot.gd")]([])
+capacity = 0
+focused_index = -1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdo6v"]
+resource_local_to_scene = true
+atlas = ExtResource("5_0qhgr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_53kb0"]
+resource_local_to_scene = true
+script = ExtResource("3_wucym")
+slots = Array[Resource("res://source/inventory/inventorySlot.gd")]([])
+capacity = 0
+focused_index = -1
+
+[node name="RecipeDisplay" type="PanelContainer"]
+offset_right = 160.0
+offset_bottom = 32.0
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lwxei")
+script = ExtResource("1_7qckg")
+
+[node name="BoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Input" parent="BoxContainer" instance=ExtResource("2_d7v8m")]
+layout_mode = 2
+volume = SubResource("Resource_tgrju")
+allow_fill = false
+allow_empty = false
+
+[node name="RecipeIcon" parent="BoxContainer" instance=ExtResource("4_pji07")]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qdo6v")
+
+[node name="Output" parent="BoxContainer" instance=ExtResource("2_d7v8m")]
+layout_mode = 2
+volume = SubResource("Resource_53kb0")
+allow_fill = false
+allow_empty = false

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbtd5cnbukuc5"]
+
+[ext_resource type="Texture2D" uid="uid://ca0g3w4sj0lar" path="res://assets/ui/craftingIcon.png" id="1_2h3jp"]
+[ext_resource type="Script" path="res://source/crafting/recipeIcon.gd" id="2_bo7ly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h8bt"]
+resource_local_to_scene = true
+atlas = ExtResource("1_2h3jp")
+region = Rect2(0, 0, 32, 32)
+
+[node name="RecipeIcon" type="TextureRect"]
+texture = SubResource("AtlasTexture_1h8bt")
+script = ExtResource("2_bo7ly")

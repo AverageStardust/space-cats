@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://c7qkpaeqkjqh6"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_1526w"]
+
+[resource]
+script = ExtResource("1_1526w")
+name = "Caesar Salad"
+description = ""
+texture_offset = Vector2i(9, 7)
+stack_size = 99
+tags = Array[int]([])
+entity = ""
+meal_value = 2
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8fo88b1qc2e2"]
+
+[ext_resource type="Script" path="res://source/utility/console.gd" id="1_w3r1c"]
+[ext_resource type="SystemFont" uid="uid://kjg0lteaj3f6" path="res://source/utility/consoleFont.tres" id="2_tyflj"]
+
+[node name="Window" type="Window"]
+position = Vector2i(200, 84)
+size = Vector2i(600, 400)
+
+[node name="Console" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w3r1c")
+
+[node name="ColorRect" type="ColorRect" parent="Console"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Console"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Console/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_tyflj")
+theme_override_fonts/bold_font = ExtResource("2_tyflj")
+theme_override_fonts/italics_font = ExtResource("2_tyflj")
+theme_override_fonts/bold_italics_font = ExtResource("2_tyflj")
+theme_override_fonts/mono_font = ExtResource("2_tyflj")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+bbcode_enabled = true
+scroll_following = true
+
+[node name="LineEdit" type="LineEdit" parent="Console/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tyflj")
+theme_override_font_sizes/font_size = 16

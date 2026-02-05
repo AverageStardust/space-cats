@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxoy7ovuurie1"]
+
+[ext_resource type="PackedScene" uid="uid://d2ybe1ilfjvob" path="res://source/utility/interactionBox.tscn" id="1_rwuta"]
+[ext_resource type="Script" path="res://source/dialogue/dialogueBox.gd" id="1_y55s2"]
+
+[node name="DialogueBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y55s2")
+
+[node name="InteractionBox" parent="." instance=ExtResource("1_rwuta")]
+interaction = &"open_dialogue"

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="TileEntity" load_steps=6 format=3 uid="uid://cbfua15ta0hgh"]
+
+[ext_resource type="Script" path="res://resources/entityScene/collectableState.gd" id="1_jyyur"]
+[ext_resource type="Script" path="res://resources/entityScene/collectableOptions.gd" id="3_5llwp"]
+[ext_resource type="Script" path="res://source/tile/tileEntity.gd" id="4_6ij5s"]
+
+[sub_resource type="Resource" id="Resource_egv31"]
+script = ExtResource("1_jyyur")
+broken = false
+broken_time = 0.0
+
+[sub_resource type="Resource" id="Resource_nmd7m"]
+script = ExtResource("3_5llwp")
+texture_offset = Vector2i(2, 2)
+broken_texture_offset = Vector2i(2, 3)
+break_time = 3.0
+break_stength = 3
+tool_type = 1
+custom_interaction = "ironOre"
+drops = Array[String](["ironOre"])
+regrow_time = 120.0
+fertilizable = false
+
+[resource]
+script = ExtResource("4_6ij5s")
+texture_offset = Vector2i(0, 0)
+has_sprite = true
+scene_id = "collectable"
+scene_options = SubResource("Resource_nmd7m")
+inital_state = SubResource("Resource_egv31")
+water_platform = false
+height_offset = -6
+item = ""

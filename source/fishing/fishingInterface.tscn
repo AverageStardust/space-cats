@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://do2md6yl70f5a"]
+
+[ext_resource type="Script" path="res://source/fishing/fishingInterface.gd" id="1_325m6"]
+[ext_resource type="Shader" path="res://source/fishing/spear.gdshader" id="2_bepbj"]
+[ext_resource type="Shader" path="res://source/fishing/dottedOutline.gdshader" id="2_gm1hl"]
+[ext_resource type="Texture2D" uid="uid://cj3p3b5gl1ig" path="res://assets/ui/holdingSpear.png" id="2_lpn33"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vkm38"]
+shader = ExtResource("2_gm1hl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tuhe"]
+bg_color = Color(0.598309, 0.598309, 0.598309, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.850472, 0.206434, 0.432987, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mfljg"]
+resource_local_to_scene = true
+shader = ExtResource("2_bepbj")
+shader_parameter/spear_color = Color(1, 1, 1, 1)
+
+[node name="FishingInterface" type="SubViewportContainer"]
+offset_right = 384.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_325m6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="ThrowOutline" type="PanelContainer" parent="Control"]
+material = SubResource("ShaderMaterial_vkm38")
+layout_mode = 2
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tuhe")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(384, 288)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 8
+color = Color(0.0627451, 0.423529, 0.690196, 1)
+
+[node name="HoldingSpear" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mfljg")
+position = Vector2(344, 248)
+texture = ExtResource("2_lpn33")
+
+[connection signal="gui_input" from="Control/ThrowOutline" to="." method="_on_throw_outline_gui_input"]

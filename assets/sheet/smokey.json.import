@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dmw7q1qgy0j2n"
+valid=false
+
+[deps]
+
+source_file="res://assets/sheet/smokey.json"
+
+[params]
+
+compress=true

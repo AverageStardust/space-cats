@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://d1iperqbms8bm"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_6fnw6"]
+
+[resource]
+script = ExtResource("1_6fnw6")
+name = "Salmon"
+description = ""
+texture_offset = Vector2i(3, 3)
+stack_size = 99
+tags = Array[int]([4])
+entity = ""
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://baatprxlmbsh7"]
+
+[ext_resource type="Script" path="res://source/inventory/volumeInterface.gd" id="1_txmtd"]
+[ext_resource type="Script" path="res://source/inventory/inventoryVolume.gd" id="2_ty0fq"]
+[ext_resource type="AudioStream" uid="uid://cci24jwi6gdsh" path="res://assets/audio/interface/emptySlot.ogg" id="3_ddr2y"]
+[ext_resource type="AudioStream" uid="uid://g5g0c4n25f7w" path="res://assets/audio/interface/fillSlot.ogg" id="4_j6q7t"]
+[ext_resource type="AudioStream" uid="uid://bjg4pod4kvbwn" path="res://assets/audio/interface/transferSlot.ogg" id="5_l2821"]
+
+[sub_resource type="Resource" id="Resource_d7nue"]
+script = ExtResource("2_ty0fq")
+slots = Array[Resource("res://source/inventory/inventorySlot.gd")]([])
+capacity = 1
+focused_index = -1
+
+[node name="GridContainer" type="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 12
+script = ExtResource("1_txmtd")
+volume = SubResource("Resource_d7nue")
+
+[node name="EmptySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ddr2y")
+volume_db = -10.0
+bus = &"Interface"
+
+[node name="FillSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j6q7t")
+volume_db = -10.0
+bus = &"Interface"
+
+[node name="TransferSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_l2821")
+bus = &"Interface"

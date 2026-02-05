@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdt67p8t3bu1o"]
+
+[ext_resource type="Script" path="res://source/background/background.gd" id="1_4jrg6"]
+[ext_resource type="Texture2D" uid="uid://cqnwban37m8w0" path="res://assets/stars.png" id="1_lkuyo"]
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_4jrg6")
+
+[node name="FarSprite" type="Sprite2D" parent="."]
+z_index = -100
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lkuyo")
+region_enabled = true
+region_rect = Rect2(0, 0, 4096, 4096)
+
+[node name="NearSprite" type="Sprite2D" parent="."]
+z_index = -100
+texture_repeat = 2
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lkuyo")
+region_enabled = true
+region_rect = Rect2(0, 0, 4096, 4096)

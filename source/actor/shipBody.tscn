@@ -1,0 +1,255 @@
+[gd_scene load_steps=20 format=3 uid="uid://c8asme2i60g4h"]
+
+[ext_resource type="Script" path="res://source/actor/shipBody.gd" id="1_xjat4"]
+[ext_resource type="Script" path="res://source/actor/actor.gd" id="2_oy2y0"]
+[ext_resource type="Script" path="res://source/actor/vehicle.gd" id="3_18jx4"]
+[ext_resource type="Texture2D" uid="uid://bksk381wb77qd" path="res://assets/atlas/shipDiffuse.png" id="3_btv85"]
+[ext_resource type="Texture2D" uid="uid://bhixdm86b42kw" path="res://assets/atlas/shipNormal.png" id="4_flf6l"]
+[ext_resource type="PackedScene" uid="uid://d2ybe1ilfjvob" path="res://source/utility/interactionBox.tscn" id="5_g6tk4"]
+[ext_resource type="AudioStream" uid="uid://djin82nuod5a3" path="res://assets/audio/ship/thrustor.ogg" id="7_odmmd"]
+[ext_resource type="Script" path="res://source/utility/randomAudioStreamPlayer.gd" id="8_43inp"]
+
+[sub_resource type="Resource" id="Resource_qxky1"]
+script = ExtResource("2_oy2y0")
+position = Vector2(0, 0)
+velocity = Vector2(0, 0)
+rotation = 0
+surface_velocity = 0.0
+angular_velocity = 0.0
+ground_placement = true
+ground_movment = false
+tile_width = 0.25
+surface_offset = -6.0
+max_speed = 1.0
+max_water_speed = 0.0
+walk_strength = 0.0
+stop_strength = 0.0
+alignment_strength = 0.12
+space_movment = true
+acceleration = 0.065
+max_angular_velocity = 0.025
+space_dampening = 0.007
+
+[sub_resource type="Resource" id="Resource_ep4dw"]
+script = ExtResource("3_18jx4")
+actor = SubResource("Resource_qxky1")
+boarded = false
+max_fuel = 100.0
+current_fuel = 100.0
+repairs = 0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v236w"]
+radius = 17.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jc18"]
+radius = 7.0
+height = 23.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycq6o"]
+size = Vector2(14, 28)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ux7mm"]
+diffuse_texture = ExtResource("3_btv85")
+normal_texture = ExtResource("4_flf6l")
+
+[sub_resource type="Gradient" id="Gradient_v1lft"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_44aau"]
+gradient = SubResource("Gradient_v1lft")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_vs7qt"]
+offsets = PackedFloat32Array(0.570447, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_n32o3"]
+offsets = PackedFloat32Array(0, 0.447619, 0.719048, 1)
+colors = PackedColorArray(1, 0.85098, 0.4, 1, 0.886275, 0.443137, 0.137255, 1, 0.713726, 0.188235, 0.219608, 1, 0.576471, 0.117647, 0.258824, 1)
+
+[sub_resource type="Gradient" id="Gradient_m2n36"]
+offsets = PackedFloat32Array(0, 0.457143, 0.852381, 1)
+colors = PackedColorArray(0.886275, 0.443137, 0.137255, 1, 0.713726, 0.188235, 0.219608, 1, 0.576471, 0.117647, 0.258824, 1, 0.431373, 0.0823529, 0.258824, 1)
+
+[node name="ShipBody" type="CharacterBody2D"]
+z_index = -1
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_xjat4")
+ship = SubResource("Resource_ep4dw")
+
+[node name="BodyShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v236w")
+
+[node name="TankShape" type="CollisionShape2D" parent="."]
+position = Vector2(-10.5, -42)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2jc18")
+
+[node name="LeftLegShape" type="CollisionShape2D" parent="."]
+position = Vector2(-24, -14)
+shape = SubResource("RectangleShape2D_ycq6o")
+
+[node name="RightLegShape" type="CollisionShape2D" parent="."]
+position = Vector2(22, -14)
+shape = SubResource("RectangleShape2D_ycq6o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = SubResource("CanvasTexture_ux7mm")
+hframes = 5
+region_rect = Rect2(40, 0, 20, 32)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-14, -62)
+color = Color(0.868801, 0, 0.225203, 1)
+energy = 2.5
+texture = SubResource("GradientTexture2D_44aau")
+height = 1.0
+
+[node name="InteractionBox" parent="." instance=ExtResource("5_g6tk4")]
+position = Vector2(-1, -16)
+interaction_time = 0.4
+
+[node name="UpEngineParticles" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(-1, -16)
+emitting = false
+amount = 32
+lifetime = 0.5
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, 1)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 90.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_min = 1.5
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_vs7qt")
+color_initial_ramp = SubResource("Gradient_n32o3")
+
+[node name="DownEngineParticles" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(-1, -36)
+emitting = false
+amount = 9
+lifetime = 0.4
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 45.0
+initial_velocity_max = 60.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_min = 0.8
+scale_amount_max = 2.4
+color_ramp = SubResource("Gradient_vs7qt")
+color_initial_ramp = SubResource("Gradient_m2n36")
+
+[node name="TopLeftThrusterParticles" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(-23.5, -47)
+emitting = false
+amount = 6
+lifetime = 0.3
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_vs7qt")
+color_initial_ramp = SubResource("Gradient_m2n36")
+
+[node name="TopRightThrusterParticles" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(13.5, -47)
+emitting = false
+amount = 6
+lifetime = 0.3
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_vs7qt")
+color_initial_ramp = SubResource("Gradient_m2n36")
+
+[node name="BottomLeftThrusterParticles" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(-23.5, -9)
+emitting = false
+amount = 6
+lifetime = 0.3
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, 1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_vs7qt")
+color_initial_ramp = SubResource("Gradient_m2n36")
+
+[node name="BottomRightThrusterParticles" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(13.5, -9)
+emitting = false
+amount = 6
+lifetime = 0.3
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, 1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_vs7qt")
+color_initial_ramp = SubResource("Gradient_m2n36")
+
+[node name="ThrustSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_odmmd")
+max_polyphony = 8
+bus = &"World"
+
+[node name="ImpactSound" type="AudioStreamPlayer" parent="."]
+max_polyphony = 8
+bus = &"World"
+script = ExtResource("8_43inp")
+path = "res://assets/audio/ship/impact_%03d.ogg"
+amount = 5

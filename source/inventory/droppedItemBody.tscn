@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://plv15i8hjj56"]
+
+[ext_resource type="Script" path="res://source/inventory/droppedItemBody.gd" id="1_f50nb"]
+[ext_resource type="PackedScene" uid="uid://bvdilfa2dlfao" path="res://source/utility/itemDisplay.tscn" id="2_8beba"]
+[ext_resource type="Script" path="res://source/inventory/inventorySlot.gd" id="3_aq3fx"]
+
+[sub_resource type="Resource" id="Resource_eyo8n"]
+script = ExtResource("3_aq3fx")
+item_id = ""
+amount = 0
+capacity = 0
+remaining_durability = 0
+focused = false
+
+[node name="DroppedItemBody" type="Node2D"]
+script = ExtResource("1_f50nb")
+
+[node name="ItemDisplay" parent="." instance=ExtResource("2_8beba")]
+slot = SubResource("Resource_eyo8n")

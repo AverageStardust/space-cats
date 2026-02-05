@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://mk7gvcyfqhke"]
+
+[ext_resource type="PackedScene" uid="uid://d2ybe1ilfjvob" path="res://source/utility/interactionBox.tscn" id="1_e20cp"]
+[ext_resource type="Script" path="res://resources/entityScene/chest.gd" id="1_ivu5i"]
+[ext_resource type="AudioStream" uid="uid://bsukoj8vyolqm" path="res://assets/audio/interface/chestOpen.ogg" id="3_k1sr1"]
+[ext_resource type="AudioStream" uid="uid://ci1spyc8ncigh" path="res://assets/audio/interface/chestClose.ogg" id="4_xm1ir"]
+
+[node name="Chest" type="Node2D"]
+script = ExtResource("1_ivu5i")
+
+[node name="InteractionBox" parent="." instance=ExtResource("1_e20cp")]
+position = Vector2(0, -16)
+interaction = &"toggle_chest"
+
+[node name="OpenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k1sr1")
+
+[node name="CloseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xm1ir")

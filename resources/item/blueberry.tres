@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://c7h14u0mnsbh5"]
+
+[ext_resource type="Script" path="res://source/inventory/inventoryItem.gd" id="1_kblwr"]
+
+[resource]
+script = ExtResource("1_kblwr")
+name = "Blueberries"
+description = ""
+texture_offset = Vector2i(1, 2)
+stack_size = 99
+tags = Array[int]([1, 2])
+entity = ""
+meal_value = 0
+tool_type = 0
+tool_strength = 0
+tool_specialty = ""
+max_durability = 0

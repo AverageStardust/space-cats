@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://jicxclyjw3eq"]
+
+[ext_resource type="Texture2D" uid="uid://xr6xthwpq74y" path="res://assets/ui/ninePatch.png" id="1_j1fs0"]
+
+[node name="Panel" type="NinePatchRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j1fs0")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
